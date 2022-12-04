@@ -2,7 +2,9 @@
   "name": "web-charity-bitc",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",

@@ -36,7 +36,7 @@ function Header() {
     justifyContent: 'center'
   }))
   return (
-    <Header position="fixed">
+    <Header position="fixed"> 
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* LOGO */}

@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header';
 
 function DefaultLayout({ children }) {

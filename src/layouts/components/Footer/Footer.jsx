@@ -1,7 +1,7 @@
 import { Container, Box, Typography, Grid, Button } from '@mui/material';
 import React from 'react';
-import images from '../../assets/images'
-import Image from '../../components/Image';
+import images from '../../../assets/images'
+import Image from '../../../components/Image';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -10,6 +10,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 function Footer() {
   return (
     <Container sx={{
+      typography: {
+        fontFamily: ['Arial'],
+      },
       maxWidth: { xs: '100%' },
       background: 'rgb(33, 32, 43)',
       display: 'flex',
@@ -117,7 +120,8 @@ function Footer() {
               paddingTop: '20px',
               textAlign: { xs: 'center', md: 'unset' }
             }}>
-              <Typography variant='span' component='p' sx={{
+              <Typography variant='span' component='p' 
+                sx={{
                 color: 'white',
                 marginBottom: '15px',
                 fontWeight: 'bold',

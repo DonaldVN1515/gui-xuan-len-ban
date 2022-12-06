@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPhone} from '@fortawesome/free-solid-svg-icons'
+import {faPhone} from '@fortawesome/free-solid-svg-icons';
 
 import * as React from 'react';
 import images from '../../../assets/images';

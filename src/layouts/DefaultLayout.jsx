@@ -9,7 +9,7 @@ function DefaultLayout({ children }) {
     <Box>
       <Header />
 
-      <Box>{children}</Box>
+      <Box sx={{mt:'100px'}}>{children}</Box>
 
       <Footer />
     </Box>

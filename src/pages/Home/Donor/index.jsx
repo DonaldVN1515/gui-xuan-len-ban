@@ -47,7 +47,12 @@ function Donor({ title, data }) {
     >
       {/* title */}
       <Box
-        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          py: 5,
+        }}
       >
         <MyTypography variant="h5" component="h4">
           {title}

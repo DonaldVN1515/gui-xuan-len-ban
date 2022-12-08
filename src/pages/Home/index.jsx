@@ -1,11 +1,13 @@
 import { Box } from '@mui/material';
-import classNames from 'classnames/bind';
 import React from 'react';
-
 import images from '../../assets/images';
+import About from './About';
 import Banner from './Banner';
 import Donor from './Donor';
 // import PropTypes from 'prop-types';
+import Timeline from './Timeline';
+
+import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 const cx = classNames.bind(styles);
 
@@ -48,12 +50,19 @@ const contributorData = [
 function Home(props) {
   return (
     <Box
-      sx={{
-        // display: 'none',
-      }}
+      sx={
+        {
+          // display: 'none',
+        }
+      }
     >
       {/* Banner */}
       <Banner />
+      {/* About */}
+      <About />
+
+      {/* Timeline */}
+      <Timeline />
       <Box>
         {/* Nha Tai Tro - Donor */}
         <Donor title="Nhà tài trợ" data={donorData} />

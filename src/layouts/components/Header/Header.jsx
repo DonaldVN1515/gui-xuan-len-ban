@@ -10,20 +10,26 @@ import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPhone} from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import * as React from 'react';
 import images from '../../../assets/images';
 import Image from '../../../components/Image';
 
-
 // USING FOR SCSS MODULE
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
-const pages = ['Home', 'About us', 'Causes', 'Donation', 'Blog'];
+const pages = [
+  'Home',
+  'About us',
+  'Timeline',
+  'Donation',
+  'Wishes',
+  'Sponsors',
+];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -154,12 +160,12 @@ function Header() {
                   color: 'inherit',
                   fontSize: 13,
                   display: 'block',
-                  fontWeight:600,
+                  fontWeight: 600,
                   letterSpacing: 1,
-                  ":hover":{
-                    background:'var(--primary)',
+                  ':hover': {
+                    background: 'var(--primary)',
                     color: '#fff',
-                  }
+                  },
                 }}
               >
                 {page}
@@ -169,7 +175,7 @@ function Header() {
 
           {/* RIGHT */}
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faPhone} className={cx('icon')}  />
+            <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
             <Typography
               variant="h6"
               noWrap
@@ -177,7 +183,7 @@ function Header() {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: 'none', md: 'flex' },               
+                display: { xs: 'none', md: 'flex' },
                 fontSize: 14,
                 fontWeight: 600,
                 color: '#3c3b3b',
@@ -187,18 +193,18 @@ function Header() {
             >
               +161 94 32 141
             </Typography>
-            <Button 
-              variant="outlined" 
+            <Button
+              variant="outlined"
               color="error"
               sx={{
-                border:2,
-                ":hover":{
-                  border:2,
-                  background:'var(--primary)',
+                border: 2,
+                ':hover': {
+                  border: 2,
+                  background: 'var(--primary)',
                   color: '#fff',
-                }
+                },
               }}
-              >
+            >
               Donation
             </Button>
           </Box>

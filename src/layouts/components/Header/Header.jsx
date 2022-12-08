@@ -45,6 +45,7 @@ function Header() {
     justifyContent: 'center',
     // todo: change the alpha of box shadows when scrolling
     boxShadow: 'none',
+    // display:"none",
   }));
   const MyContainer = styled(Container)(({ theme }) => ({
     padding: '0 100px',
@@ -149,11 +150,16 @@ function Header() {
                   my: 1,
                   px: 3,
                   py: 1.5,
+                  margin: 1,
                   color: 'inherit',
                   fontSize: 13,
                   display: 'block',
                   fontWeight:600,
                   letterSpacing: 1,
+                  ":hover":{
+                    background:'var(--primary)',
+                    color: '#fff',
+                  }
                 }}
               >
                 {page}
@@ -184,12 +190,11 @@ function Header() {
             <Button 
               variant="outlined" 
               color="error"
-              className={cx('button')}
               sx={{
                 border:2,
                 ":hover":{
                   border:2,
-                  background:'#d32f2fd6',
+                  background:'var(--primary)',
                   color: '#fff',
                 }
               }}

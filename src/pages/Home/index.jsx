@@ -16,7 +16,7 @@ function Home(props) {
       {/* Nha Tai Tro - Donor */}
       <Donor />
       {/* Don Vi To Chuc - Organization */}
-      <Organization />
+      {/* <Organization /> */}
     </Box>
   );
 }

@@ -11,7 +11,12 @@ const cx = classNames.bind(styles);
 
 function Home(props) {
   return (
-    <Box>
+    <Box
+    
+      sx={{
+        display:'none', 
+      }}
+    >
       Home
       {/* Nha Tai Tro - Donor */}
       <Donor />

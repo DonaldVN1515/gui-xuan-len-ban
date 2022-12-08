@@ -1,7 +1,7 @@
 import { Container, Box, Typography, Grid, Button } from '@mui/material';
 import React from 'react';
-import images from '../../assets/images';
-import Image from '../../components/Image';
+import images from '../../../assets/images'
+import Image from '../../../components/Image';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -9,32 +9,33 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 function Footer() {
   return (
-    <Container
-      sx={{
-        maxWidth: { xs: '100%' },
-        background: 'rgb(33, 32, 43)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '100px 0 40px 0',
-        position: 'relative',
-        mt: 20
-      }}
-    >
-      <Box
-        sx={{
-          background: 'rgb(254, 103, 17)',
-          width: '70%',
-          padding: '30px 0',
-          borderRadius: '5px',
-          position: 'absolute',
-          bottom: '100%',
-          transform: 'translateY(50%)',
-        }}
-      >
-        <Grid
-          container
-          sx={{
+    <Container sx={{
+      maxWidth: { xs: '100%' },
+      background: 'rgb(33, 32, 43)',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '100px 0 40px 0',
+      position: 'relative',
+    }}>
+      <Box sx={{
+        background: 'rgb(254, 103, 17)',
+        width: '70%',
+        padding: '30px 0',
+        borderRadius: '5px',
+        position: 'absolute',
+        bottom: '100%',
+        transform: 'translateY(50%)',
+        
+        display:"none",
+      }}>
+        <Grid container sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          flexWrap: 'wrap'
+        }}/>
+          <Grid md={8} sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-around',
@@ -127,6 +128,7 @@ function Footer() {
                 justifyContent: { xs: 'center' },
                 alignItems: { xs: 'center' },
                 flexWrap: { xs: 'wrap' },
+                marginRight: '100px',
               }}
             >
               <Box
@@ -149,6 +151,7 @@ function Footer() {
                   color: 'white',
                   marginBottom: '15px',
                   opacity: '0.7',
+                  fontSize:'13px',
                 }}
               >
                 We're givemo, passionate and committed to helping nonprofits
@@ -162,102 +165,64 @@ function Footer() {
                   width: { xs: '100%' },
                   color: 'white',
                   opacity: '0.7',
+                  fontSize:'13px',
                 }}
               >
                 64 Dhaka center keokradong bandarban CA 71601
               </Typography>
             </Grid>
 
-            <Grid
-              md={2}
-              xs={12}
-              sm={6}
-              sx={{
-                paddingTop: '20px',
-                textAlign: { xs: 'center', md: 'unset' },
-              }}
-            >
-              <Typography
-                variant="span"
-                component="p"
-                sx={{
-                  color: 'white',
-                  marginBottom: '15px',
-                  fontWeight: 'bold',
-                }}
-              >
-                Main Menu
-              </Typography>
-              <Typography
-                href=""
-                variant="span"
-                component="a"
-                sx={{
-                  color: 'white',
-                  marginBottom: '10px',
-                  opacity: '0.7',
-                  display: 'block',
-                  textDecoration: 'none',
-                }}
-              >
-                Home Page
-              </Typography>
-              <Typography
-                href=""
-                variant="span"
-                component="a"
-                sx={{
-                  color: 'white',
-                  marginBottom: '10px',
-                  opacity: '0.7',
-                  display: 'block',
-                  textDecoration: 'none',
-                }}
-              >
-                Blog & News
-              </Typography>
-              <Typography
-                href=""
-                variant="span"
-                component="a"
-                sx={{
-                  color: 'white',
-                  marginBottom: '10px',
-                  opacity: '0.7',
-                  display: 'block',
-                  textDecoration: 'none',
-                }}
-              >
-                Abouts Us
-              </Typography>
-              <Typography
-                href=""
-                variant="span"
-                component="a"
-                sx={{
-                  color: 'white',
-                  marginBottom: '10px',
-                  opacity: '0.7',
-                  display: 'block',
-                  textDecoration: 'none',
-                }}
-              >
-                Contact Us
-              </Typography>
-              <Typography
-                href=""
-                variant="span"
-                component="a"
-                sx={{
-                  color: 'white',
-                  marginBottom: '10px',
-                  opacity: '0.7',
-                  display: 'block',
-                  textDecoration: 'none',
-                }}
-              >
-                Causes
-              </Typography>
+            <Grid md={2} xs={12} sm={6} sx={{
+              paddingTop: '20px',
+              textAlign: { xs: 'center', md: 'unset' },
+            }}>
+              <Typography variant='span' component='p' sx={{
+                color: 'white',
+                opacity: '0.9',
+                marginBottom: '15px',
+                fontWeight: 'bold',
+                fontSize:'14px',
+              }}>Main Menu</Typography>
+              <Typography href='' variant='span' component='a' sx={{
+                color: 'white',
+                marginBottom: '10px',
+                opacity: '0.7',
+                display: 'block',
+                textDecoration: 'none',
+                fontSize:'13px',
+              }}>Home Page</Typography>
+              <Typography href='' variant='span' component='a' sx={{
+                color: 'white',
+                marginBottom: '10px',
+                opacity: '0.7',
+                display: 'block',
+                textDecoration: 'none',
+                fontSize:'13px',
+              }}>Blog & News</Typography>
+              <Typography href='' variant='span' component='a' sx={{
+                color: 'white',
+                marginBottom: '10px',
+                opacity: '0.7',
+                display: 'block',
+                textDecoration: 'none',
+                fontSize:'13px',
+              }}>Abouts Us</Typography>
+              <Typography href='' variant='span' component='a' sx={{
+                color: 'white',
+                marginBottom: '10px',
+                opacity: '0.7',
+                display: 'block',
+                textDecoration: 'none',
+                fontSize:'13px',
+              }}>Contact Us</Typography>
+              <Typography href='' variant='span' component='a' sx={{
+                color: 'white',
+                marginBottom: '10px',
+                opacity: '0.7',
+                display: 'block',
+                textDecoration: 'none',
+                fontSize:'13px',
+              }}>Causes</Typography>
             </Grid>
 
             <Grid
@@ -267,6 +232,7 @@ function Footer() {
               sx={{
                 paddingTop: '20px',
                 textAlign: { xs: 'center', md: 'unset' },
+                maxWidth:'20% !important',
               }}
             >
               <Typography
@@ -276,6 +242,8 @@ function Footer() {
                   color: 'white',
                   marginBottom: '15px',
                   fontWeight: 'bold',
+                  fontSize:'14px',
+                  opacity: '0.9',
                 }}
               >
                 NONPROFITS
@@ -287,6 +255,7 @@ function Footer() {
                   color: 'white',
                   marginBottom: '10px',
                   opacity: '0.7',
+                  fontSize:'13px',
                 }}
               >
                 Nonprofit Resources
@@ -298,6 +267,7 @@ function Footer() {
                   color: 'white',
                   marginBottom: '10px',
                   opacity: '0.7',
+                  fontSize:'13px',
                 }}
               >
                 Donation Online
@@ -309,6 +279,7 @@ function Footer() {
                   color: 'white',
                   marginBottom: '10px',
                   opacity: '0.7',
+                  fontSize:'13px',
                 }}
               >
                 Donation's Details
@@ -320,6 +291,7 @@ function Footer() {
                   color: 'white',
                   marginBottom: '10px',
                   opacity: '0.7',
+                  fontSize:'13px',
                 }}
               >
                 Volunteering
@@ -336,10 +308,28 @@ function Footer() {
               }}
             >
               <FacebookRoundedIcon
-                sx={{ color: 'white' }}
+                sx={{ color: 'white', 
+                ":hover":{
+                  cursor:'pointer',
+                  color: '#8D9EFF'
+                }
+              }}
               ></FacebookRoundedIcon>
-              <InstagramIcon sx={{ color: 'white' }}></InstagramIcon>
-              <TwitterIcon sx={{ color: 'white' }}></TwitterIcon>
+              <InstagramIcon 
+                sx={{ 
+                    color: 'white',
+                    ":hover":{
+                      cursor:'pointer',
+                      color: 'pink'
+                    }
+                }}
+                ></InstagramIcon>
+              <TwitterIcon sx={{ color: 'white',
+                ":hover":{
+                  cursor:'pointer',
+                  color: '#2146C7'
+                }
+            }}></TwitterIcon>
             </Grid>
           </Grid>
         </Box>

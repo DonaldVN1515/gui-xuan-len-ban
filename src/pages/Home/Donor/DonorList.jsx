@@ -16,11 +16,23 @@ DonorList.propTypes = {
 
 export default function DonorList({ data }) {
   return (
-    <ImageList cols={12} gap={40}>
+    <ImageList gap={40} sx={{ display: 'flex' }}>
       {data.map((item, index) => (
-        <ImageListItem key={index} cols={4}>
+        <ImageListItem
+          key={index}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Image src={item.imageUrl} alt={item.title} className={cx('image')} />
-          <Typography variant="h6" component="h6" sx={{ textAlign: 'center', py: 2 }}>
+          <Typography
+            variant="h6"
+            component="h6"
+            sx={{ textAlign: 'center', py: 1 }}
+          >
             {item.title}
           </Typography>
         </ImageListItem>

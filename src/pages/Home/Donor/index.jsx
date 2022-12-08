@@ -1,39 +1,15 @@
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import { Box, Container, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import React from 'react';
-import images from '../../../assets/images';
 import DonorList from './DonorList';
 
-// Title, ImageUrl Cua Nha Tai Tro
-const DonorsData = [
-  {
-    title: 'title',
-    imageUrl: images.noImage,
-  },
-  {
-    title: 'title',
-    imageUrl: images.noImage,
-  },
-  {
-    title: 'title',
-    imageUrl: images.noImage,
-  },
-  // {
-  //   title: 'title',
-  //   imageUrl: images.noImage,
-  // },
-  // {
-  //   title: 'title',
-  //   imageUrl: images.noImage,
-  // },
-];
-
-function Donor(props) {
+function Donor({ title, data }) {
   const MyTypography = styled(Typography)(({ theme }) => ({
     display: 'inline-block',
     position: 'relative',
     fontWeight: 'bold',
+    padding: '10px 0',
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -69,21 +45,24 @@ function Donor(props) {
       }}
       disableGutters={true}
     >
-      {/* Nhà tài trợ */}
+      {/* title */}
       <Box
         sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
       >
         <MyTypography variant="h5" component="h4">
-          Nhà tài trợ
+          {title}
         </MyTypography>
 
         {/* Donor's Logo */}
-        <DonorList data={DonorsData} />
+        <DonorList data={data} />
       </Box>
     </Container>
   );
 }
 
-Donor.propTypes = {};
+Donor.propTypes = {
+  title: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
+};
 
 export default Donor;

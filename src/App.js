@@ -19,7 +19,7 @@ function App() {
 		setTimeout(()=>{
 			setLoading(false)
 
-		},2000)
+		},500)
 	},[])
 	return (
 		<Router>

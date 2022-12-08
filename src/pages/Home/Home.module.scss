@@ -3,9 +3,11 @@
 }
 
 // Donor
-
-// Organization
-.organizationItem__image {
-  width: 350px;
-  
+.image {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

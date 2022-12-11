@@ -3,10 +3,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import style from './DefaultLayout.module.scss'
+import classNames from 'classnames/bind';
+import {ThemeContext} from '../components/context/ThemeProvider'
+const cx = classNames.bind(style)
 
 function DefaultLayout({ children }) {
+  const context = React.useContext(ThemeContext)
+
   return (
-    <Box>
+    <Box  className={cx(context.theme)}>
       <Header />
 
       <Box sx={{mt:'100px'}}>{children}</Box>

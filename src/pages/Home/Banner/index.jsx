@@ -9,29 +9,34 @@ import { useState } from 'react';
 import images from '../../../assets/images';
 import Image from '../../../components/Image';
 import styles from './Banner.module.scss';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../components/translation/i18n';
 
-const cx = classNames.bind(styles);
 
-const data = [
-  {
-    imageUrl: images.slide2,
-    title: "The power to choose in a child's hands",
-    desc: 'We do it for people in need',
-  },
-  {
-    imageUrl: images.slide1,
-    title: 'Lorem ipsum dolor',
-    desc: 'Lorem abc xyz',
-  },
-  {
-    imageUrl: images.slide3,
-    title: 'Lorem ipsum dolor ',
-    desc: 'Lorem abc xyz',
-  },
-];
+
 
 function Banner() {
   const [index, setIndex] = useState(0);
+  const cx = classNames.bind(styles);
+  const { t } = useTranslation()
+
+  const data = [
+    {
+      imageUrl: images.slide2,
+      title: t('content.slide_title'),
+      desc: 'We do it for people in need',
+    },
+    {
+      imageUrl: images.slide1,
+      title: 'Lorem ipsum dolor',
+      desc: 'Lorem abc xyz',
+    },
+    {
+      imageUrl: images.slide3,
+      title: 'Lorem ipsum dolor ',
+      desc: 'Lorem abc xyz',
+    },
+  ];
 
   const handleArrow = (direction) => {
     if (direction === 'left') {

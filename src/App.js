@@ -5,7 +5,7 @@ import Home from './pages/Home';
 
 import { useState, useEffect } from "react";
 import SyncLoader  from 'react-spinners/SyncLoader';
-
+import './App.css'
 const override = {
 	display: "block",
 	textAlign:'center',

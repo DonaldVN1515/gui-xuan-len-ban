@@ -3,14 +3,15 @@ const images = {
   bitcLogo: require('./logos/logo-bitc.png'),
   btecLogo: require('./logos/logo-btec.png'),
 
-  // slides
-  slide1: require('./slides/slide1.jpg'),
-  slide2: require('./slides/slide2.jpg'),
-  slide3: require('./slides/slide3.jpg'),
+  // About
+  about: require('./about/about.jpg'),
 
-  // SVGS
+  // slides
+  flower: require('./slides/hoa.png'),
+
+  // SVG
   icon: require('./svg/icon.svg'),
-  icon1: require('./svg/icon1.svg'),
+  icon1: require('./svg/icon1.svg').default,
   icon2: require('./svg/icon2.svg'),
   icon3: require('./svg/icon3.svg'),
   icon4: require('./svg/icon4.svg'),

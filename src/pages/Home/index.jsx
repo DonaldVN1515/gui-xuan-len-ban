@@ -50,11 +50,7 @@ const contributorData = [
 function Home(props) {
   return (
     <Box
-      sx={
-        {
-          // display: 'none',
-        }
-      }
+      className={cx('wrapper')}
     >
       {/* Banner */}
       <Banner />

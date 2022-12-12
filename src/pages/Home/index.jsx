@@ -4,6 +4,7 @@ import images from '../../assets/images';
 import About from './About';
 import Banner from './Banner';
 import Donor from './Donor';
+import Donate from './Donate';
 // import PropTypes from 'prop-types';
 import Timeline from './Timeline';
 
@@ -63,6 +64,11 @@ function Home(props) {
 
       {/* Timeline */}
       <Timeline />
+
+      {/* Donate */}
+      <Donate />
+
+
       <Box>
         {/* Nha Tai Tro - Donor */}
         <Donor title="Nhà tài trợ" data={donorData} />

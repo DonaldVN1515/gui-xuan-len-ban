@@ -58,7 +58,7 @@ function Header() {
   }));
 
   return (
-    <Header position="fixed">
+    <Header position="fixed" className={cx('dark')}>
       <MyContainer maxWidth="xl" disableGutters={true}>
         <Toolbar disableGutters>
           {/* LOGO */}

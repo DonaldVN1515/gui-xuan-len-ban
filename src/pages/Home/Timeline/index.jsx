@@ -63,7 +63,7 @@ function Timeline(props) {
       {/* TIMELINEITEM */}
       {timelineData.map((data, index) => (
         <Box key={index}>
-          {index % 2 == 0 ? (
+          {index % 2 === 0 ? (
             <TimelineItem
               title={data.title}
               desc={data.desc}

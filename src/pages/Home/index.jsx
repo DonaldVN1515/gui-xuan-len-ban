@@ -76,7 +76,7 @@ function Home(props) {
       </Box>
 
 
-      {/* WISH */}
+      {/* WISH - Loi Chuc*/}
       <Wish />
     </Box>
   );

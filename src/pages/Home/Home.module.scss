@@ -1,2 +1,158 @@
 .wrapper {
 }
+
+// Donor
+.image {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// TIMELINE
+.timeline__icon {
+  font-size: 80px;
+}
+.timeline {
+  direction: rtl;
+}
+
+//About
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
+
+.about__image {
+  width: 447px;
+  height: 396px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  border-radius: 5px;
+  filter: drop-shadow(8px 8px 10px gray);
+}
+
+.quotes {
+  font-family: 'Dancing Script', cursive;
+  font-size: 16px;
+  i {
+    margin-left: 20px;
+    color: var(--primary);
+  }
+}
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+    margin-top: 20px;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: var(--primary);
+      border-radius: 1.625rem;
+      .icon {
+        position: absolute;
+        top: 0.85rem;
+        right: 1.0625rem;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $black;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        right: 10.0625rem;
+        i {
+          color: $white;
+        }
+      }
+    }
+    .button-text {
+      color: $white;
+    }
+  }
+}
+
+// DONATE
+.donate__image {
+  width: 400px;
+}
+.image__item {
+  width: 300px;
+}
+
+// WISH
+.wish__image {
+  width: 200px;
+  height: 100%;
+  filter: grayscale(100%);
+  position: relative;
+
+  &::after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to right, #fff, transparent);
+  }
+}
+.wish__image--top {
+  max-width: 400px;
+  top: -40px;
+  right: 200px;
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+}

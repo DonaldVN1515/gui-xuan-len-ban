@@ -11,10 +11,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { ThemeContext } from '../../../components/Context/ThemeProvider';
+import { ThemeContext } from '../../../components/context/ThemeProvider';
 // import language
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/Translation/i18n';
+import i18n from '../../../components/translation/i18n';
 
 import LanguageMenu from './LanguageMenu';
 

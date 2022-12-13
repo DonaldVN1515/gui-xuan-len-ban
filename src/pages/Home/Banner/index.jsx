@@ -6,7 +6,7 @@ import images from '../../../assets/images';
 import Image from '../../../components/Image';
 import styles from './Banner.module.scss';
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/Translation/i18n';
+import i18n from '../../../components/translation/i18n';
 
 const cx = classNames.bind(styles);
 /** 

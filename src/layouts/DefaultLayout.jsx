@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import style from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
-import { ThemeContext } from '../components/Context/ThemeProvider';
+import { ThemeContext } from '../components/context/ThemeProvider';
 const cx = classNames.bind(style);
 
 function DefaultLayout({ children }) {

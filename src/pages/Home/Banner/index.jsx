@@ -15,11 +15,24 @@ function Banner(){
                 variant="h1"
                 component="h1"
                 className={cx('banner-title')}
+                sx={{
+                  bottom:'30%'
+                }}
               >
-                Gùi Xuân lên bản 
-              </Typography>
+                Gùi Xuân 
+            </Typography>
+            <Typography
+                variant="h1"
+                component="h1"
+                className={cx('banner-title')}
+                sx={{bottom:'7%',
+                }}
+              >
+                lên bản 
+            </Typography>
               <img src={images.flower} alt="" className={cx('flower-1')}/>
               <img src={images.flower} alt="" className={cx('flower-2')}/>
+              <img src={images.flower} alt="" className={cx('flower-3')}/>
         </Box>
     )
 }

@@ -5,6 +5,7 @@ const images = {
 
   // About
   about: require('./about/about.jpg'),
+  brush: require('./about/brush.png'),
 
   // slides
   flower: require('./slides/hoa.png'),

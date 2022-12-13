@@ -11,10 +11,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { ThemeContext } from '../../../components/context/ThemeProvider'
+import { ThemeContext } from '../../../components/Context/ThemeProvider';
 // import language
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/translation/i18n';
+import i18n from '../../../components/Translation/i18n';
 
 import LanguageMenu from './LanguageMenu';
 
@@ -27,8 +27,6 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
-
-
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -58,21 +56,23 @@ function Header() {
     padding: '0 100px',
   }));
 
-
-  const context = React.useContext(ThemeContext)
+  const context = React.useContext(ThemeContext);
   // use language
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   function changeLang(e) {
     // let lang = i18n.language
     // return lang === 'vi' ? i18n.changeLanguage('en') : i18n.changeLanguage('vi')
-    let value = e.target.value
+    let value = e.target.value;
+
+    console.log('value: ', e.target.value);
+
     switch (value) {
       case 'English':
-        i18n.changeLanguage('en')
+        i18n.changeLanguage('en');
         break;
       default:
-        i18n.changeLanguage('vi')
+        i18n.changeLanguage('vi');
         break;
     }
   }
@@ -92,14 +92,10 @@ function Header() {
     'Wishes',
     'Sponsors',
   ];
-  
 
   return (
-<<<<<<< HEAD
     <Header position="fixed" className={cx('dark')}>
-=======
-    <Header position="fixed" >
->>>>>>> origin/an
+      {/* <Header position="fixed" > */}
       <MyContainer maxWidth="xl" disableGutters={true}>
         <Toolbar disableGutters>
           {/* LOGO */}
@@ -218,7 +214,7 @@ function Header() {
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Button onClick={context.toggleTheme}>Dark Mode</Button>
             {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
-            <LanguageMenu onclick={changeLang}></LanguageMenu>
+            <LanguageMenu onClick={changeLang} />
             <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
             <Typography
               variant="h6"

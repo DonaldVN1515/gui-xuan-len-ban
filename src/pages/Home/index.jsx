@@ -10,6 +10,7 @@ import Timeline from './Timeline';
 
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
+import Wish from './Wish';
 const cx = classNames.bind(styles);
 
 // DONOR, Organization, contributor data
@@ -73,6 +74,10 @@ function Home(props) {
         {/*Phối hợp thực thiện - contributor */}
         <Donor title="Phối hợp thực thiện" data={contributorData} />
       </Box>
+
+
+      {/* WISH */}
+      <Wish />
     </Box>
   );
 }

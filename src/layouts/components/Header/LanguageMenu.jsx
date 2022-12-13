@@ -1,55 +1,56 @@
 import * as React from 'react';
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Fade from '@mui/material/Fade';
 
-const languages = ['Tiếng Việt', 'English']
+const languages = ['Tiếng Việt', 'English'];
 
+export default function Language({ onClick }) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-
-export default function LanguageMenu({ onclick }) {
-    const [open, setOpen] = React.useState(true);
-
-    const handleClick = () => {
-        setOpen(!open);
-    };
-
-
-
-    return (
-        <List
-            sx={{ width: '100%', maxWidth: 360, bgcolor: 'inherit' }}
-            component="nav"
-            aria-labelledby="nested-list-subheader"
-        >
-
-            <ListItemButton onClick={handleClick}>
-                <ListItemIcon>
-                    <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-                {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItemButton>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-
-                    {languages.map((language,i) =>
-                        <Button type='submit' value={language} key={i} onClick={onclick} sx={{ pl: 4 }}>
-                            {language}
-                        </Button>
-                    )}
-                </List>
-            </Collapse>
-        </List>
-    );
+  return (
+    <div>
+      <Button
+        id="fade-button"
+        aria-controls={open ? 'fade-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        Language
+      </Button>
+      <Menu
+        id="fade-menu"
+        MenuListProps={{
+          'aria-labelledby': 'fade-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+        {languages.map((language, index) => (
+          <Button
+            sx={{ display: 'flex', px: 2 }}
+            fullWidth
+            value={language}
+            type="submit"
+            key={index}
+            onClick={onClick}
+            onClose={handleClose}
+          >
+            {language}
+          </Button>
+        ))}
+      </Menu>
+    </div>
+  );
 }

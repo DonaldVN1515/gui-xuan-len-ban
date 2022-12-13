@@ -1,5 +1,4 @@
 .wrapper {
-
 }
 
 // Donor
@@ -17,7 +16,7 @@
   font-size: 80px;
 }
 .timeline {
- direction: rtl;
+  direction: rtl;
 }
 
 //About
@@ -37,10 +36,10 @@
   filter: drop-shadow(8px 8px 10px gray);
 }
 
-.quotes{
+.quotes {
   font-family: 'Dancing Script', cursive;
   font-size: 16px;
-  i{
+  i {
     margin-left: 20px;
     color: var(--primary);
   }
@@ -50,8 +49,12 @@ $bg: #f3f8fa;
 $white: #fff;
 $black: #282936;
 
-@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
-    transition: $property $duration $ease;
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
 }
 button {
   position: relative;
@@ -70,7 +73,7 @@ button {
     height: auto;
     margin-top: 20px;
     .circle {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: relative;
       display: block;
       margin: 0;
@@ -82,13 +85,13 @@ button {
         position: absolute;
         top: 0.85rem;
         right: 1.0625rem;
-        i{
+        i {
           font-size: 20px;
         }
       }
     }
     .button-text {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: absolute;
       top: 0;
       left: 0;
@@ -108,7 +111,7 @@ button {
       width: 100%;
       .icon {
         right: 10.0625rem;
-        i{
+        i {
           color: $white;
         }
       }
@@ -119,3 +122,37 @@ button {
   }
 }
 
+// DONATE
+.donate__image {
+  width: 400px;
+}
+.image__item {
+  width: 300px;
+}
+
+// WISH
+.wish__image {
+  width: 200px;
+  height: 100%;
+  filter: grayscale(100%);
+  position: relative;
+
+  &::after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(to right, #fff, transparent);
+  }
+}
+.wish__image--top {
+  max-width: 400px;
+  top: -40px;
+  right: 200px;
+  position: absolute;
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+}

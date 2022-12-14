@@ -41,7 +41,7 @@ function Donor({ title, data }) {
     <Container
       maxWidth="xl"
       sx={{
-        padding: '0 100px',
+        padding: '100px 100px 0 100px',
         width: '50%',
       }}
       disableGutters={true}

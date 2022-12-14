@@ -11,6 +11,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { ThemeContext } from '../../../components/context/ThemeProvider';
+// import language
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../components/translation/i18n';
+
+import LanguageMenu from './LanguageMenu';
 
 import * as React from 'react';
 import images from '../../../assets/images';
@@ -21,15 +27,6 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
-
-const pages = [
-  'Home',
-  'About us',
-  'Timeline',
-  'Donation',
-  'Wishes',
-  'Sponsors',
-];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -42,8 +39,10 @@ function Header() {
     setAnchorElNav(null);
   };
   const Header = styled(AppBar)(({ theme }) => ({
-    backgroundColor: '#ffff',
-    color: '#000',
+    // backgroundColor: '#ffff',
+    // color: '#000',
+    backgroundColor: 'inherit',
+    color: 'inherit',
     // todo: change height off header 80 -> 100
     height: '100px',
     display: 'flex',
@@ -57,10 +56,47 @@ function Header() {
     padding: '0 100px',
   }));
 
+  const context = React.useContext(ThemeContext);
+  // use language
+  const { t } = useTranslation();
+
+  function changeLang(e) {
+    // let lang = i18n.language
+    // return lang === 'vi' ? i18n.changeLanguage('en') : i18n.changeLanguage('vi')
+    let value = e.target.value;
+
+    console.log('value: ', e.target.value);
+
+    switch (value) {
+      case 'English':
+        i18n.changeLanguage('en');
+        break;
+      default:
+        i18n.changeLanguage('vi');
+        break;
+    }
+  }
+  // const pages = [
+  //   'Home',
+  //   'About us',
+  //   'Timeline',
+  //   'Donation',
+  //   'Wishes',
+  //   'Sponsors',
+  // ];
+  const pages = [
+    t('content.home'),
+    'About us',
+    'Timeline',
+    'Donation',
+    'Wishes',
+    'Sponsors',
+  ];
+
   return (
     <Header position="fixed">
       <MyContainer maxWidth="xl" disableGutters={true}>
-        <Toolbar disableGutters>
+        <Toolbar>
           {/* LOGO */}
           <Typography
             variant="h6"
@@ -175,6 +211,9 @@ function Header() {
 
           {/* RIGHT */}
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+            <Button onClick={context.toggleTheme}>Dark Mode</Button>
+            {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
+            <LanguageMenu onClick={changeLang} />
             <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
             <Typography
               variant="h6"

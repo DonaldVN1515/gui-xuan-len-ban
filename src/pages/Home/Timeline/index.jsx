@@ -1,9 +1,9 @@
 import { faMessage } from '@fortawesome/free-regular-svg-icons';
 import { Box, Container, Typography } from '@mui/material';
-import classNames from 'classnames/bind';
 import React from 'react';
-import styles from '../Home.module.scss';
 import TimelineItem from './TimelineItem';
+import styles from '../Home.module.scss';
+import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 const timelineData = [
@@ -63,7 +63,7 @@ function Timeline(props) {
       {/* TIMELINEITEM */}
       {timelineData.map((data, index) => (
         <Box key={index}>
-          {index % 2 == 0 ? (
+          {index % 2 === 0 ? (
             <TimelineItem
               title={data.title}
               desc={data.desc}

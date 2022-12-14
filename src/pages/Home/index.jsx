@@ -31,6 +31,10 @@ const organizationData = [
     title: '',
     imageUrl: images.btecLogo,
   },
+  {
+    title: '',
+    imageUrl: images.btecLogo,
+  },
 ];
 const contributorData = [
   {
@@ -38,12 +42,12 @@ const contributorData = [
     imageUrl: images.bitcLogo,
   },
   {
-    title: 'title',
-    imageUrl: images.noImage,
+    title: '',
+    imageUrl: images.bitcLogo,
   },
   {
-    title: 'title',
-    imageUrl: images.noImage,
+    title: '',
+    imageUrl: images.bitcLogo,
   },
 ];
 

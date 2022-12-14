@@ -10,30 +10,31 @@ function Donor({ title, data }) {
     position: 'relative',
     fontWeight: 'bold',
     padding: '10px 0',
-    '&::after': {
-      content: '""',
-      position: 'absolute',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      width: '100px',
-      borderRadius: '1.2rem',
-      height: '6px',
-      background:
-        'linear-gradient(-135deg, rgba(27, 14, 151, 0.6235294118), #3a93d1)',
-      right: '-7rem',
-    },
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      width: '100px',
-      borderRadius: '1.2rem',
-      height: '6px',
-      background:
-        'linear-gradient(-135deg, rgba(27, 14, 151, 0.6235294118), #3a93d1)',
-      left: '-7rem',
-    },
+    marginBottom:'20px',
+    // '&::after': {
+    //   content: '""',
+    //   position: 'absolute',
+    //   top: '50%',
+    //   transform: 'translateY(-50%)',
+    //   width: '100px',
+    //   borderRadius: '1.2rem',
+    //   height: '6px',
+    //   background:
+    //     'linear-gradient(-135deg, rgba(27, 14, 151, 0.6235294118), #3a93d1)',
+    //   right: '-7rem',
+    // },
+    // '&::before': {
+    //   content: '""',
+    //   position: 'absolute',
+    //   top: '50%',
+    //   transform: 'translateY(-50%)',
+    //   width: '100px',
+    //   borderRadius: '1.2rem',
+    //   height: '6px',
+    //   background:
+    //     'linear-gradient(-135deg, rgba(27, 14, 151, 0.6235294118), #3a93d1)',
+    //   left: '-7rem',
+    // },
   }));
 
   return (

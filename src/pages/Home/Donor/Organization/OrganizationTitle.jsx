@@ -13,6 +13,7 @@ function OrganizationTitle({ title }) {
     position: 'relative',
     fontWeight: 'bold',
     padding: '30px 0',
+  
     // '&::after': {
     //   content: '""',
     //   position: 'absolute',

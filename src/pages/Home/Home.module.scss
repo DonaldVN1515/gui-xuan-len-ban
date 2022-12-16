@@ -19,6 +19,7 @@
   direction: rtl;
 }
 
+
 //About
 @import url('https://fonts.googleapis.com/css?family=Mukta:700');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
@@ -32,11 +33,15 @@
   justify-content: center;
   align-items: center;
   object-fit: contain;
-  border-radius: 5px;
-  filter: drop-shadow(8px 8px 10px gray);
+  filter: drop-shadow(8px -4px 10px gray);
 }
-
-.quotes {
+.about__brush{
+  position: absolute;
+  top: -1%;
+  left: 3%;
+  transform: rotate(18deg);
+}
+.quotes{
   font-family: 'Dancing Script', cursive;
   font-size: 16px;
   i {

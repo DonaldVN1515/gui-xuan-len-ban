@@ -6,24 +6,33 @@
     position: relative;
     .banner-title{
         color: rgba(242, 232, 232, 0.93);
-        font-size: 110px;
+        // background: -webkit-linear-gradient(#eee, #333);
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        font-size: 130px;
         font-family: 'Bangers', cursive;
         position: absolute;
         z-index: 1;
-        bottom: 8%;
-        left: 25%;
-        text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.766), 0px -4px 10px rgba(49, 11, 11, 0.782);
+        left: 35%;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.915), 0px -4px 10px rgba(49, 11, 11, 0.782);
+        letter-spacing: 5px;
     }
     .flower-1{
         position: absolute;
-        bottom: 9%;
-        left: 18%;
+        bottom: 31%;
+        left: 26%;
         transform: rotate(-41deg);
     }
     .flower-2{
         position: absolute;
-        bottom: -2%;
-        right: 27%;
+        bottom: -5%;
+        right: 35%;
+        transform: rotate(-225deg); 
+    }
+    .flower-3{
+        position: absolute;
+        bottom: 16%;
+        right: 44%;
         transform: rotate(-205deg);
         
     }

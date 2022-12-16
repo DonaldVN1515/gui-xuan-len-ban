@@ -57,7 +57,7 @@ function Timeline(props) {
           display: 'block',
         }}
       >
-        Timeline
+        {/* Timeline */}
       </Typography>
 
       {/* TIMELINEITEM */}

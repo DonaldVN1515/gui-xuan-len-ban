@@ -10,6 +10,7 @@ function TimelineItem({ title, desc, icon, time, classname }) {
     position: 'relative',
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
+    display:'none',
 
     '&::after': {
       content: '""',

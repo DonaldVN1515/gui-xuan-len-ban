@@ -30,22 +30,26 @@ const donorData = [
 ];
 const organizationData = [
   {
-    title: 'BTEC FPT',
+    title: '',
+    imageUrl: images.btecLogo,
+  },
+  {
+    title: '',
     imageUrl: images.btecLogo,
   },
 ];
 const contributorData = [
   {
-    title: 'BTEC Information Technology Club',
+    title: '',
     imageUrl: images.bitcLogo,
   },
   {
-    title: 'title',
-    imageUrl: images.noImage,
+    title: '',
+    imageUrl: images.bitcLogo,
   },
   {
-    title: 'title',
-    imageUrl: images.noImage,
+    title: '',
+    imageUrl: images.bitcLogo,
   },
 ];
 
@@ -60,15 +64,12 @@ function Home(props) {
       <About />
 
       {/* Timeline */}
-      <Timeline />
-
-      {/* Donate */}
-      <Donate />
-
-
+      <Timeline 
+        
+      />
       <Box>
         {/* Nha Tai Tro - Donor */}
-        <Donor title="Nhà tài trợ" data={donorData} />
+        {/* <Donor title="Nhà tài trợ" data={donorData} className={cx('donor')}/> */}
         {/* Don Vi To Chuc - Organization */}
         <Donor title="Đơn vị tổ chức" data={organizationData} />
         {/*Phối hợp thực thiện - contributor */}

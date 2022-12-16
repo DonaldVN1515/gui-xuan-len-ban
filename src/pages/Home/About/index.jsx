@@ -81,6 +81,7 @@ function About(props) {
           position: 'relative',
         }}
       >
+        <Image src={images.brush} alt="" className={cx('about__brush')} />
         <Image src={images.about} alt="" className={cx('about__image')} />
 
         {/* QUOTES */}

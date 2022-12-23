@@ -27,7 +27,7 @@ function Wish({ id }) {
       }}
     >
       {/* LEFT */}
-      <Box>
+      <Box data-aos="fade-left">
         <Typography variant="p">CALL TO ACTION</Typography>
         <Typography variant="h3" component="h4" sx={{ py: 4 }}>
           Lets Create Something Great Together!
@@ -68,6 +68,7 @@ function Wish({ id }) {
           alignItems: 'center',
           position: 'relative',
         }}
+        data-aos="fade-right"
       >
         <Image
           src={images.about}

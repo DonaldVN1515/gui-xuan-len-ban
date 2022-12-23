@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from '../Home.module.scss';
 const cx = classNames.bind(styles);
-function TimelineItem({ title, desc, icon, time, classname, separateRight }) {
+function TimelineItem({ title, desc, icon, time, classname, separateRight, left, right}) {
   const MyBox = styled(Box)(({ theme }) => ({
     position: 'relative',
     display: 'grid',
@@ -31,7 +31,7 @@ function TimelineItem({ title, desc, icon, time, classname, separateRight }) {
   });
 
   return (
-    <MyBox className={classes}>
+    <MyBox className={classes} >
       {/* Left */}
       <Box
         sx={{
@@ -39,6 +39,7 @@ function TimelineItem({ title, desc, icon, time, classname, separateRight }) {
           pb: 5,
           borderBottom: '3px dotted #000',
         }}
+        data-aos={left}
       >
         <Title variant="h5" component="h6" className={cx('right')}>
           {title}
@@ -64,6 +65,7 @@ function TimelineItem({ title, desc, icon, time, classname, separateRight }) {
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        data-aos={right}
       >
         <FontAwesomeIcon icon={icon} className={cx('timeline__icon')} />
       </Box>

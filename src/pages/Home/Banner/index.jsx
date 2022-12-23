@@ -106,6 +106,7 @@ function Banner() {
         sx={{
           bottom: '30%',
         }}
+        data-aos="fade-up"
       >
         Gùi Xuân
       </Typography>
@@ -114,6 +115,7 @@ function Banner() {
         component="h1"
         className={cx('banner-title')}
         sx={{ bottom: '7%' }}
+        data-aos="fade-up"
       >
         lên bản
       </Typography>

@@ -44,6 +44,7 @@ function Donor({ title, data }) {
         padding: '100px 0 0 0',
         width: '50%',
       }}
+      
       // disableGutters={true}
     >
       {/* title */}
@@ -54,8 +55,9 @@ function Donor({ title, data }) {
           alignItems: 'center',
           py: 5,
         }}
+        
       >
-        <MyTypography variant="h5" component="h4">
+        <MyTypography variant="h5" component="h4" data-aos="fade-up"> 
           {title}
         </MyTypography>
 

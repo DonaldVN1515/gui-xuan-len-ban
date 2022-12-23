@@ -1,8 +1,11 @@
 import { Box, Container, Paper, styled, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from '../../../components/Image';
 import styles from '../Home.module.scss';
+import Countup from 'react-countup'
+import ScrollTrigger from 'react-scroll-trigger'
+
 const cx = classNames.bind(styles);
 
 function Donate({ id }) {
@@ -71,6 +74,9 @@ function Donate({ id }) {
     bottom: '-170px',
     left: 0,
   }));
+
+  const [counterOn, setCounterOn] = useState(false)
+
   return (
     <Wrapper>
       <Container
@@ -87,21 +93,23 @@ function Donate({ id }) {
         {/* LEFT */}
         <Box
           sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}
-        >
-          <Image src="" alt="" className={cx('donate__image')} />
 
-          <ImageTop>
+        >
+          <Image src="" alt="" className={cx('donate__image')} data-aos="zoom-in" />
+
+          <ImageTop data-aos="zoom-in">
             <Image src="" alt="" className={cx('image__item')} />
           </ImageTop>
 
           {/* DonateMoney */}
-          <DonateMoney>
+          <DonateMoney data-aos="fade-up">
             <Typography
               variant="h5"
               component="h6"
               sx={{ fontSize: 40, mb: 1 }}
             >
-              70 tr
+              {counterOn && <Countup start={0} end={70} duration={2}></Countup>}
+              tr
             </Typography>
             <Typography variant="p">
               Volunteers helping carry out our global mission
@@ -110,7 +118,7 @@ function Donate({ id }) {
         </Box>
 
         {/* RIGHT */}
-        <Box>
+        <Box data-aos="fade-left">
           <Typography variant="h4">How we're making a difference</Typography>
           <Typography variant="p">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -138,30 +146,35 @@ function Donate({ id }) {
         </Box>
 
         {/* BOTTOM */}
-        <Bottom>
+        <Bottom data-aos="fade-up">
           {donateData.map((data, index) => (
-            <Paper
-              key={index}
-              sx={{
-                p: { xs: 1, md: 4 },
-                width: 'fit-content',
-              }}
-            >
-              <Box>
-                <Typography variant="h4" component="span">
-                  {data.quantity}k
-                </Typography>
-                <Typography variant="subtitle1" component="span">
-                  +
-                </Typography>
-              </Box>
-              <Typography
-                variant="p"
-                sx={{ textTransform: 'uppercase', mt: 1, display: 'block' }}
+            <ScrollTrigger onEnter={()=>setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+              <Paper
+                key={index}
+                sx={{
+                  p: { xs: 1, md: 4 },
+                  width: 'fit-content',
+                }}
               >
-                {data.subtitle}
-              </Typography>
-            </Paper>
+                <Box>
+                  <Typography variant="h4" component="span">
+                    {/* <Countup start={0} end={data.quantity} duration={2} delay={2}></Countup> */}
+                    {counterOn && <Countup start={0} end={data.quantity} duration={2}></Countup>}
+                    k
+                  </Typography>
+                  <Typography variant="subtitle1" component="span">
+                    +
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="p"
+                  sx={{ textTransform: 'uppercase', mt: 1, display: 'block' }}
+                >
+                  {data.subtitle}
+                </Typography>
+              </Paper>
+            </ScrollTrigger>
+
           ))}
         </Bottom>
       </Container>

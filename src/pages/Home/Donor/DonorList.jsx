@@ -27,6 +27,7 @@ export default function DonorList({ data }) {
         alignItems: 'center',
         marginBottom: '100px',
       }}
+      
     >
       {data.map((item, index) => (
         <ImageListItem
@@ -40,8 +41,9 @@ export default function DonorList({ data }) {
               // alignItems: 'center',
             }
           }
+          
         >
-          <Image src={item.imageUrl} alt={item.title} className={cx('image')} />
+          <Image src={item.imageUrl} alt={item.title} className={cx('image')} data-aos="fade-down" data-aos-anchor-placement="top-bottom"/>
           <Typography
             variant="h6"
             component="h6"

@@ -5,8 +5,10 @@ import classNames from 'classnames/bind';
 import images from '../../../assets/images';
 import Image from '../../../components/Image';
 import styles from '../Home.module.scss';
+import TypeIt from "typeit-react";
 // import language
 import { useTranslation } from 'react-i18next';
+
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +19,8 @@ function About({ id }) {
     justifyContent: 'center',
   }));
   const { t } = useTranslation();
+
+
   return (
     <Container
       id={id}
@@ -32,7 +36,7 @@ function About({ id }) {
       }}
     >
       {/* LEFT */}
-      <MyBox>
+      <MyBox data-aos="fade-right">
         {/* <Typography
           variant="span"
           sx={{ textTransform: 'uppercase', color: 'orange' }}
@@ -47,7 +51,14 @@ function About({ id }) {
             color: 'var(--primary)',
           }}
         >
-          {t('content.about_us_title')}
+          <TypeIt options={{
+            loop: true,
+            waitUntilVisible: true,
+          }}
+          >
+            {t('content.about_us_title')}
+          </TypeIt>
+
         </Typography>
         <Typography
           variant="p"
@@ -78,7 +89,7 @@ function About({ id }) {
       </MyBox>
 
       {/* RIGHT */}
-      <Box
+      <Box data-aos="fade-left"
         sx={{
           display: 'flex',
           flexDirection: 'column',

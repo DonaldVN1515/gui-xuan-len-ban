@@ -146,6 +146,8 @@ function Timeline({ id }) {
               desc={data.desc}
               icon={data.icon}
               time={data.time}
+              left="fade-right"
+              right="fade-left"
             />
           ) : (
             <TimelineItem
@@ -155,6 +157,8 @@ function Timeline({ id }) {
               icon={data.icon}
               time={data.time}
               classname={cx('timeline')}
+              left="fade-left"
+              right="fade-right"
             />
           )}
         </Box>

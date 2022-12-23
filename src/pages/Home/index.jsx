@@ -55,19 +55,19 @@ const contributorData = [
 
 function Home(props) {
   return (
-    <Box
-      className={cx('wrapper')}
-    >
+    <Box className={cx('wrapper')}>
       {/* Banner */}
       <Banner />
       {/* About */}
-      <About />
+      <About id="About%20us" />
 
       {/* Timeline */}
-      <Timeline 
-        
-      />
-      <Box>
+      <Timeline id="Timeline" />
+
+      {/* Donate */}
+      <Donate id="Donation" />
+
+      <Box id="Sponsors">
         {/* Nha Tai Tro - Donor */}
         {/* <Donor title="Nhà tài trợ" data={donorData} className={cx('donor')}/> */}
         {/* Don Vi To Chuc - Organization */}
@@ -76,9 +76,8 @@ function Home(props) {
         <Donor title="Phối hợp thực thiện" data={contributorData} />
       </Box>
 
-
       {/* WISH */}
-      <Wish />
+      <Wish id="Wishes" />
     </Box>
   );
 }

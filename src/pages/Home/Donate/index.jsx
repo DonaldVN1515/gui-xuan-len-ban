@@ -5,7 +5,7 @@ import Image from '../../../components/Image';
 import styles from '../Home.module.scss';
 const cx = classNames.bind(styles);
 
-function Donate(props) {
+function Donate({ id }) {
   const donateData = [
     {
       quantity: 15,
@@ -62,9 +62,11 @@ function Donate(props) {
 
   const Bottom = styled(Box)(({ theme }) => ({
     width: '100%',
+    gap: 5,
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
-    padding: '0 100px',
+    padding: '0 24px',
     position: 'absolute',
     bottom: '-170px',
     left: 0,
@@ -72,13 +74,14 @@ function Donate(props) {
   return (
     <Wrapper>
       <Container
+        id={id}
         maxWidth="xl"
-        disableGutters={true}
         sx={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
           padding: '150px 100px 70px 100px',
           position: 'relative',
+          gap: { xs: 15, md: 0 },
         }}
       >
         {/* LEFT */}
@@ -140,7 +143,7 @@ function Donate(props) {
             <Paper
               key={index}
               sx={{
-                p: 4,
+                p: { xs: 1, md: 4 },
                 width: 'fit-content',
               }}
             >

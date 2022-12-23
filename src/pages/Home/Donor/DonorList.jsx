@@ -16,16 +16,30 @@ DonorList.propTypes = {
 
 export default function DonorList({ data }) {
   return (
-    <ImageList gap={40} sx={{ display: 'flex', marginBottom:'100px' }}>
+    <ImageList
+      gap={40}
+      sx={{
+        gap: 10,
+        display: 'flex',
+
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: '100px',
+      }}
+    >
       {data.map((item, index) => (
         <ImageListItem
           key={index}
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
+          sx={
+            {
+              // display: 'flex',
+              // flexWrap: 'wrap',
+              // flexDirection: 'column',
+              // justifyContent: 'center',
+              // alignItems: 'center',
+            }
+          }
         >
           <Image src={item.imageUrl} alt={item.title} className={cx('image')} />
           <Typography

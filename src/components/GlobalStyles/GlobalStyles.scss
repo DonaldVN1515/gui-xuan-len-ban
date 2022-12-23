@@ -2,6 +2,10 @@
   --primary: #d32f2fd6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // Custom scroll bar
 
 html *::-webkit-scrollbar-track {
@@ -13,7 +17,7 @@ html *::-webkit-scrollbar {
   width: 5px;
   height: 5px;
   background-color: white;
-  // display: none;
+  display: none;
 }
 html *::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -22,4 +26,15 @@ html *::-webkit-scrollbar-thumb {
 }
 .dark {
   background-color: black;
+}
+
+// RESET CSS
+a[href] {
+  text-decoration: none;
+  color: inherit;
+}
+
+// CSS ICON FONT AWESOME
+.fa-bullhorn {
+  transform: scaleX(-1);
 }

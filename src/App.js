@@ -25,6 +25,8 @@ function App() {
         <SyncLoader color="#d32f2fd6" cssOverride={override} />
       ) : (
         <Routes>
+          
+
           <Route
             path="/"
             element={

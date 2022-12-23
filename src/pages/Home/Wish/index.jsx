@@ -8,7 +8,7 @@ import images from '../../../assets/images';
 
 const cx = classNames.bind(styles);
 
-function Wish(props) {
+function Wish({ id }) {
   const [name, setName] = React.useState('');
   const handleChange = (event) => {
     setName(event.target.value);
@@ -16,12 +16,13 @@ function Wish(props) {
 
   return (
     <Container
+      id={id}
       maxWidth="xl"
-      disableGutters={true}
+      // disableGutters={true}
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        padding: '100px 100px',
+        padding: '100px 0',
         gap: 5,
       }}
     >

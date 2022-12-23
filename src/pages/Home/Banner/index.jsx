@@ -1,12 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Button, Container, IconButton, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
 import images from '../../../assets/images';
-import Image from '../../../components/Image';
 import styles from './Banner.module.scss';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/Translation/i18n';
 
 const cx = classNames.bind(styles);
 /** 
@@ -104,11 +99,27 @@ const cx = classNames.bind(styles);
 function Banner() {
   return (
     <Box className={cx('wrapper')}>
-      <Typography variant="h1" component="h1" className={cx('banner-title')}>
-        Gùi Xuân lên bản
+      <Typography
+        variant="h1"
+        component="h1"
+        className={cx('banner-title')}
+        sx={{
+          bottom: '30%',
+        }}
+      >
+        Gùi Xuân
+      </Typography>
+      <Typography
+        variant="h1"
+        component="h1"
+        className={cx('banner-title')}
+        sx={{ bottom: '7%' }}
+      >
+        lên bản
       </Typography>
       <img src={images.flower} alt="" className={cx('flower-1')} />
       <img src={images.flower} alt="" className={cx('flower-2')} />
+      <img src={images.flower} alt="" className={cx('flower-3')} />
     </Box>
   );
 }

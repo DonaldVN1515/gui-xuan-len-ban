@@ -1,17 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Paper, styled, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styles from '../Home.module.scss';
-import PropTypes from 'prop-types';
 const cx = classNames.bind(styles);
-function TimelineItem({ title, desc, icon, time, classname }) {
+function TimelineItem({ title, desc, icon, time, classname, separateRight }) {
   const MyBox = styled(Box)(({ theme }) => ({
     position: 'relative',
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    display:'none',
-
+    padding: '0px 0 50px 0',
     '&::after': {
       content: '""',
       width: '5px',
@@ -23,25 +22,32 @@ function TimelineItem({ title, desc, icon, time, classname }) {
       borderRight: '3px dashed #000',
     },
   }));
+  const Title = styled(Typography)(({ theme }) => ({
+    position: 'relative',
+  }));
+  const classes = cx({
+    [classname]: classname,
+    separateRight,
+  });
 
   return (
-    <MyBox className={classname}>
-    
+    <MyBox className={classes}>
       {/* Left */}
       <Box
         sx={{
-          pb: 3,
+          pt: 3,
+          pb: 5,
           borderBottom: '3px dotted #000',
         }}
       >
-        <Typography variant="h4" component="h5">
+        <Title variant="h5" component="h6" className={cx('right')}>
           {title}
-        </Typography>
+        </Title>
         <Typography
           variant="p"
           sx={{
             textAlign: 'justify',
-            pt: 2,
+            pt: 3,
             display: 'block',
             maxWidth: '80%',
           }}
@@ -52,6 +58,8 @@ function TimelineItem({ title, desc, icon, time, classname }) {
       {/* Right */}
       <Box
         sx={{
+          pt: 3,
+          pb: 5,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -66,7 +74,7 @@ function TimelineItem({ title, desc, icon, time, classname }) {
           p: 2,
           backgroundColor: 'white',
           position: 'absolute',
-          top: '50%',
+          top: '30%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: 1,

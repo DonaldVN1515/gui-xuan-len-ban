@@ -1,12 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Button, Container, IconButton, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
 import images from '../../../assets/images';
-import Image from '../../../components/Image';
 import styles from './Banner.module.scss';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/translation/i18n';
 
 const cx = classNames.bind(styles);
 /** 
@@ -102,29 +97,54 @@ const cx = classNames.bind(styles);
                 <Typography
  */
 function Banner() {
+  const Title = styled(Typography)(({ theme }) => ({
+    position: 'absolute',
+    zIndex: 1,
+    left: '50%',
+    bottom: '100px',
+    transform: 'translateX(-50%)',
+    textAlign: 'center',
+    width: '100%',
+  }));
   return (
     <Box className={cx('wrapper')}>
-      <Typography
-        variant="h1"
-        component="h1"
-        className={cx('banner-title')}
-        sx={{
-          bottom: '30%',
-        }}
-      >
-        Gùi Xuân
-      </Typography>
-      <Typography
-        variant="h1"
-        component="h1"
-        className={cx('banner-title')}
-        sx={{ bottom: '7%' }}
-      >
-        lên bản
-      </Typography>
-      <img src={images.flower} alt="" className={cx('flower-1')} />
-      <img src={images.flower} alt="" className={cx('flower-2')} />
-      <img src={images.flower} alt="" className={cx('flower-3')}/>
+      <Title component="h1">
+        <Typography
+          variant="h1"
+          component="p"
+          className={cx('banner-title')}
+          data-aos="fade-up"
+        >
+          Gùi Xuân
+        </Typography>
+        <Typography
+          variant="h1"
+          component="span"
+          className={cx('banner-title')}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          lên bản
+        </Typography>
+      </Title>
+      <img
+        src={images.flower}
+        alt=""
+        className={cx('flower-1')}
+        data-aos="fade-up"
+      />
+      <img
+        src={images.flower}
+        alt=""
+        className={cx('flower-2')}
+        data-aos="fade-up"
+      />
+      <img
+        src={images.flower}
+        alt=""
+        className={cx('flower-3')}
+        data-aos="fade-up"
+      />
     </Box>
   );
 }

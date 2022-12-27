@@ -43,7 +43,8 @@ function Donor({ title, data }) {
       sx={{
         width: '50%',
       }}
-      disableGutters={true}
+      
+      // disableGutters={true}
     >
       {/* title */}
       <Box
@@ -53,8 +54,9 @@ function Donor({ title, data }) {
           alignItems: 'center',
           py: 5,
         }}
+        
       >
-        <MyTypography variant="h5" component="h4">
+        <MyTypography variant="h5" component="h4" data-aos="fade-up"> 
           {title}
         </MyTypography>
 

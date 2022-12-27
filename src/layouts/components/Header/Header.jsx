@@ -1,20 +1,18 @@
+import { faHandHoldingHeart, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { ThemeContext } from '../../../components/context/ThemeProvider';
+// import { ThemeContext } from '../../../components/context/ThemeProvider';
 // import language
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/translation/i18n';
+import i18n from '../../../components/Translation/i18n';
 
 import LanguageMenu from './LanguageMenu';
 
@@ -24,23 +22,21 @@ import Image from '../../../components/Image';
 
 // USING FOR SCSS MODULE
 import classNames from 'classnames/bind';
+import { useLocation } from 'react-router-dom';
+import Darkmode from './Darkmode';
 import styles from './Header.module.scss';
+import Nav from './Nav';
+import SideBar from './Sidebar';
 
 const cx = classNames.bind(styles);
 
-function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+function Header({ pages }) {
+  const [, setAnchorElNav] = React.useState(null);
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
   const Header = styled(AppBar)(({ theme }) => ({
-    // backgroundColor: '#ffff',
-    // color: '#000',
     backgroundColor: 'inherit',
     color: 'inherit',
     // todo: change height off header 80 -> 100
@@ -53,10 +49,10 @@ function Header() {
     // display:"none",
   }));
   const MyContainer = styled(Container)(({ theme }) => ({
-    // padding: '0 100px',
+    padding: '0 100px',
   }));
 
-  const context = React.useContext(ThemeContext);
+  // const context = React.useContext(ThemeContext);
   // use language
   const { t } = useTranslation();
 
@@ -76,27 +72,22 @@ function Header() {
         break;
     }
   }
-  // const pages = [
-  //   'Home',
-  //   'About us',
-  //   'Timeline',
-  //   'Donation',
-  //   'Wishes',
-  //   'Sponsors',
-  // ];
-  const pages = [
-    t('content.home'),
-    'About us',
-    'Timeline',
-    'Donation',
-    'Wishes',
-    'Sponsors',
-  ];
 
+  // get current hashtag path
+  const { hash } = useLocation();
+  console.log('[hash]', hash);
+
+  // SHOW / HIDE SIDEBAR
+  const [open, setOpen] = React.useState(false);
+
+  const toggleSlider = () => {
+    setOpen(!open);
+  };
   return (
-    <Header position="fixed">
+    <Header position="fixed" className={cx('dark')}>
+      {/* <Header position="fixed" > */}
       <MyContainer maxWidth="xl" disableGutters={true}>
-        <Toolbar>
+        <Toolbar disableGutters>
           {/* LOGO */}
           <Typography
             variant="h6"
@@ -105,7 +96,6 @@ function Header() {
             href="/"
             sx={{
               display: { xs: 'none', md: 'flex' },
-              mr: 2,
               color: 'inherit',
               minWidth: '80px',
               maxWidth: '100px',
@@ -113,45 +103,31 @@ function Header() {
           >
             <Image src={images.btecLogo} alt="BTEC FPT" />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', lg: 'flex' } }}></Box> */}
 
           {/* RESPONSIVE */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* MENU ON TABLET & MOBILE */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={toggleSlider}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
+          <SideBar
+            open={open}
+            onClose={toggleSlider}
+            pages={pages}
+            hash={hash}
+            // onClick={handleCloseNavMenu}
+          />
+
+          {/* LOGO ON MOBILE */}
           <Typography
             variant="h5"
             noWrap
@@ -160,48 +136,49 @@ function Header() {
             sx={{
               flexGrow: 1,
               mr: 2,
-              color: '#000',
               display: { xs: 'flex', md: 'none' },
+              color: 'inherit',
+              minWidth: '80px',
+              maxWidth: '100px',
             }}
           >
-            <Image
-              src={images.btecLogo}
-              alt="BTEC FPT"
-              style={{
-                width: '100px',
-              }}
-            />
+            <Image src={images.btecLogo} alt="BTEC FPT" />
           </Typography>
 
           {/* MENU ON DESKTOP */}
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: {
-                xs: 'none',
-                md: 'flex',
-              },
-              color: 'inherit',
-            }}
-          >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+          <Nav pages={pages} hash={hash} onClick={handleCloseNavMenu} />
+
+          {/* RIGHT */}
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+            <Box
+              sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}
+            >
+              {/* PHONE */}
+              <a href="tel:0988520893">
+                <IconButton
+                  sx={{
+                    p: {
+                      md: 0.2,
+                      lg: 2,
+                    },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
+                </IconButton>
+              </a>
+              {/* <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
                 sx={{
-                  my: 1,
-                  px: 3,
-                  py: 1.5,
-                  margin: 1,
-                  color: 'inherit',
-                  fontSize: 13,
-                  display: 'block',
+                  mr: 2,
+                  display: { xs: 'none', md: 'flex' },
+                  fontSize: 14,
                   fontWeight: 600,
-                  letterSpacing: 1,
-                  ':hover': {
-                    background: 'var(--primary)',
-                    color: '#fff',
-                  },
+                  color: '#3c3b3b',
+                  textDecoration: 'none',
+                  marginRight: 2.5,
                 }}
               >
                 {page}
@@ -211,36 +188,19 @@ function Header() {
 
           {/* RIGHT */}
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-            {/* <Button onClick={context.toggleTheme}>Dark Mode</Button> */}
+            <Button onClick={context.toggleTheme}>Dark Mode</Button>
             {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
-            <Box sx={{}}>
-              <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
-            </Box>
-            <Box sx={{margin:'0 20px 0 10px'}}>
-              <LanguageMenu onClick={changeLang} />
-            </Box>
-            {/* <Typography
+            <LanguageMenu onClick={changeLang} />
+            <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
+            <Typography
               variant="h6"
               noWrap
               component="a"
               href="/"
               sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontSize: 14,
-                fontWeight: 600,
-                color: '#3c3b3b',
-                textDecoration: 'none',
-                marginRight: 2.5,
-              }}
-            >
-              +161 94 32 141
-            </Typography> */}
-            <Button
-              variant="outlined"
-              color="error"
-              sx={{
+                display: { xs: 'none', sm: 'block' },
                 border: 2,
+                borderColor: 'var(--primary)',
                 ':hover': {
                   border: 2,
                   background: 'var(--primary)',
@@ -248,12 +208,35 @@ function Header() {
                 },
               }}
             >
-              Donation
+              +161 94 32 141
+            </Typography>
+            <Button
+              href="https://thiennguyen.app/user/hominhthanh1"
+              target="_blank"
+              variant="outlined"
+              color="inherit"
+              className={cx('btn__primary')}
+              sx={{
+                display: { xs: 'block', sm: 'none' },
+
+                border: 2,
+                borderColor: 'var(--primary)',
+                ':hover': {
+                  border: 2,
+                  background: 'var(--primary)',
+                  color: '#fff',
+                },
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faHandHoldingHeart}
+                style={{ fontSize: '25px', padding: '4px 0' }}
+              />
             </Button>
           </Box>
         </Toolbar>
-      </MyContainer>
+      </Container>
     </Header>
   );
 }
-export default Header;
+export default React.memo(Header);

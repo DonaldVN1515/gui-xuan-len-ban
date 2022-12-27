@@ -18,18 +18,43 @@
 .timeline__icon {
   font-size: 80px;
 }
+// Reverse Content and Icon
 .timeline {
   direction: rtl;
 }
 
+.right::after {
+  left: 0;
+  bottom: -8px;
+  position: absolute;
+  content: '';
+  width: 100px;
+  height: 5px;
+  border-radius: 5px;
+  background: linear-gradient(-135deg, #d32f2fd6, orange);
+}
+.separateRight .right::after {
+  left: unset;
+  right: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .timeline {
+    direction: unset;
+  }
+  .separateRight .right::after {
+    left: 0;
+    right: unset;
+  }
+}
 
 //About
 @import url('https://fonts.googleapis.com/css?family=Mukta:700');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
 
 .about__image {
-  width: 447px;
-  height: 396px;
+  width: 500px;
+  height: 450px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -38,7 +63,22 @@
   object-fit: contain;
   filter: drop-shadow(8px -4px 10px gray);
 }
-.about__brush{
+@media screen and (max-width: 1200px) {
+  .about__image {
+    margin-top: 30px;
+    width: 100%;
+    height: 550px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about__image {
+    margin-top: 10px;
+
+    height: 350px;
+  }
+}
+
+.about__brush {
   position: absolute;
   top: -1%;
   left: 3%;
@@ -53,7 +93,16 @@
     color: var(--primary);
   }
 }
-
+@media screen and (max-width: 900px) {
+  .about__brush {
+    top: 25%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about__brush {
+    top: 30%;
+  }
+}
 $bg: #f3f8fa;
 $white: #fff;
 $black: #282936;
@@ -137,6 +186,16 @@ button {
 }
 .image__item {
   width: 300px;
+  border: 8px solid white;
+}
+
+@media screen and (max-width: 900px) {
+  .donate__image {
+    width: 80%;
+  }
+  .image__item {
+    width: 100%;
+  }
 }
 
 // WISH

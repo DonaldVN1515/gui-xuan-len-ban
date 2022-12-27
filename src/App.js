@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DefaultLayout from './layouts/DefaultLayout';
 import Home from './pages/Home';
 
+// thư viện animation scroll
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 import { useState, useEffect } from 'react';
 import SyncLoader from 'react-spinners/SyncLoader';
 const override = {
@@ -17,7 +21,15 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 500);
+
+    // chỗ chỉnh aos :V
+    Aos.init({
+      duration: 2000,
+      delay: 200,
+      // once: true,
+      once: false
+    });
   }, []);
   return (
     <Router>

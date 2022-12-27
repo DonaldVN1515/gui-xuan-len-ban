@@ -1,12 +1,16 @@
-import * as React from 'react';
+import { faEarthAsia } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
-import { Box } from '@mui/material';
+import Menu from '@mui/material/Menu';
+import classNames from 'classnames/bind';
+import * as React from 'react';
+import styles from './Header.module.scss';
+import { IconButton } from '@mui/material';
 
 const languages = ['Tiếng Việt', 'English'];
-
+const cx = classNames.bind(styles);
 export default function Language({ onClick }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -19,7 +23,7 @@ export default function Language({ onClick }) {
 
   return (
     <div>
-      <Box
+      <Button
         id="fade-button"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
@@ -27,9 +31,12 @@ export default function Language({ onClick }) {
         onClick={handleClick}
         sx={{cursor:'pointer', color:'#3c3b3b'}}
       >
-        <i className="fa-solid fa-earth-americas"></i>
-      </Box>
+        Language
+      </Button>
       <Menu
+        sx={{
+          mt: 2,
+        }}
         id="fade-menu"
         MenuListProps={{
           'aria-labelledby': 'fade-button',
@@ -41,7 +48,7 @@ export default function Language({ onClick }) {
       >
         {languages.map((language, index) => (
           <Button
-            sx={{ display: 'flex', px: 2 }}
+            sx={{ display: 'flex', px: 2, color: 'inherit' }}
             fullWidth
             value={language}
             type="submit"

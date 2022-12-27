@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
 import images from '../../../assets/images';
 import styles from './Banner.module.scss';
@@ -97,31 +97,54 @@ const cx = classNames.bind(styles);
                 <Typography
  */
 function Banner() {
+  const Title = styled(Typography)(({ theme }) => ({
+    position: 'absolute',
+    zIndex: 1,
+    left: '50%',
+    bottom: '100px',
+    transform: 'translateX(-50%)',
+    textAlign: 'center',
+    width: '100%',
+  }));
   return (
     <Box className={cx('wrapper')}>
-      <Typography
-        variant="h1"
-        component="h1"
-        className={cx('banner-title')}
-        sx={{
-          bottom: '30%',
-        }}
+      <Title component="h1">
+        <Typography
+          variant="h1"
+          component="p"
+          className={cx('banner-title')}
+          data-aos="fade-up"
+        >
+          Gùi Xuân
+        </Typography>
+        <Typography
+          variant="h1"
+          component="span"
+          className={cx('banner-title')}
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          lên bản
+        </Typography>
+      </Title>
+      <img
+        src={images.flower}
+        alt=""
+        className={cx('flower-1')}
         data-aos="fade-up"
-      >
-        Gùi Xuân
-      </Typography>
-      <Typography
-        variant="h1"
-        component="h1"
-        className={cx('banner-title')}
-        sx={{ bottom: '7%' }}
+      />
+      <img
+        src={images.flower}
+        alt=""
+        className={cx('flower-2')}
         data-aos="fade-up"
-      >
-        lên bản
-      </Typography>
-      <img src={images.flower} alt="" className={cx('flower-1')} />
-      <img src={images.flower} alt="" className={cx('flower-2')} />
-      <img src={images.flower} alt="" className={cx('flower-3')} />
+      />
+      <img
+        src={images.flower}
+        alt=""
+        className={cx('flower-3')}
+        data-aos="fade-up"
+      />
     </Box>
   );
 }

@@ -5,7 +5,7 @@ import {
   faHandHoldingHeart,
   faHandshakeAngle,
   faListCheck,
-  faTruckFast
+  faTruckFast,
 } from '@fortawesome/free-solid-svg-icons';
 import { Box, Container, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
@@ -59,7 +59,7 @@ function Timeline({ id }) {
       title: t('content.timeline_item.title7'),
       desc: t('content.timeline_item.desc7'),
       icon: faTruckFast,
-      time: '07 - 08/01',
+      time: '07/01',
     },
   ];
   // const Line = styled(Box)(({ theme }) => ({
@@ -76,7 +76,7 @@ function Timeline({ id }) {
       maxWidth="xl"
       // disableGutters={true}
       sx={{
-        padding: '150px 0',
+        py: '150px',
       }}
     >
       <Typography
@@ -138,31 +138,33 @@ function Timeline({ id }) {
         </Box>
       </Box> */}
       {/* TIMELINEITEM */}
-      {timelineData.map((data, index) => (
-        <Box key={index}>
-          {index % 2 === 0 ? (
-            <TimelineItem
-              title={data.title}
-              desc={data.desc}
-              icon={data.icon}
-              time={data.time}
-              left="fade-right"
-              right="fade-left"
-            />
-          ) : (
-            <TimelineItem
-              separateRight
-              title={data.title}
-              desc={data.desc}
-              icon={data.icon}
-              time={data.time}
-              classname={cx('timeline')}
-              left="fade-left"
-              right="fade-right"
-            />
-          )}
-        </Box>
-      ))}
+      <Box>
+        {timelineData.map((data, index) => (
+          <Box key={index}>
+            {index % 2 === 0 ? (
+              <TimelineItem
+                title={data.title}
+                desc={data.desc}
+                icon={data.icon}
+                time={data.time}
+                left="fade-up"
+                right="fade-up"
+              />
+            ) : (
+              <TimelineItem
+                separateRight
+                title={data.title}
+                desc={data.desc}
+                icon={data.icon}
+                time={data.time}
+                classname={cx('timeline')}
+                left="fade-up"
+                right="fade-up"
+              />
+            )}
+          </Box>
+        ))}
+      </Box>
     </Container>
   );
 }

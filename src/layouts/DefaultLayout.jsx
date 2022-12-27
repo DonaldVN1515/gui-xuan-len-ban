@@ -6,6 +6,8 @@ import Header from './components/Header';
 import style from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 import { ThemeContext } from '../components/context/ThemeProvider';
+import { convertUrl } from '../hooks/convertUrl';
+
 // import language
 import { useTranslation } from 'react-i18next';
 
@@ -23,9 +25,9 @@ function DefaultLayout({ children }) {
     t('content.wishes'),
   ];
   const context = React.useContext(ThemeContext);
-
+  let hrefPage = `${convertUrl(t('content.home'))}`;
   return (
-    <Box className={cx(context.theme, 'wrapper')} id="Home">
+    <Box className={cx(context.theme, 'wrapper')} id={hrefPage}>
       <Header pages={pages} />
 
       <Box sx={{ pt: '100px' }}>{children}</Box>

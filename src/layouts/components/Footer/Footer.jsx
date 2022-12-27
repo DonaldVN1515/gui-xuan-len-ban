@@ -10,6 +10,7 @@ import Image from '../../../components/Image';
 // USING FOR SCSS MODULE
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
+import { convertUrl } from '../../../hooks';
 
 const cx = classNames.bind(styles);
 
@@ -47,6 +48,7 @@ function Footer({ pages }) {
   //   transform: 'translateY(50%)',
   //   display: 'none',
   // }));
+
   return (
     <Wrapper>
       <Container maxWidth="xl">
@@ -102,6 +104,7 @@ function Footer({ pages }) {
         <Box>
           <Box>
             <Grid
+              data-aos="fade-up"
               sx={{
                 display: { sm: 'grid', md: 'flex' },
                 justifyContent: 'space-between',
@@ -109,12 +112,14 @@ function Footer({ pages }) {
                   xs: 'repeat(1, 1fr)',
                   sm: 'repeat(4, 1fr)',
                 },
-                textAlign: 'center',
+                textAlign: { xs: 'center', md: 'justify' },
                 gap: 8,
               }}
             >
               {/* LOGO */}
               <Grid
+                data-aos="fade-up"
+                data-delay="500"
                 sx={{
                   display: { xs: 'block', md: 'block' },
                 }}
@@ -162,6 +167,8 @@ function Footer({ pages }) {
               </Grid>
               {/* PAGES */}
               <Grid
+                data-aos="fade-up"
+                data-delay="500"
                 sx={{
                   paddingTop: '20px',
                 }}
@@ -180,19 +187,25 @@ function Footer({ pages }) {
                   Main Menu
                 </Typography>
 
-                {pages.map((page, index) => (
-                  <MyTypography
-                    href={`#${page}`}
-                    key={index}
-                    variant="span"
-                    component="a"
-                  >
-                    {page}
-                  </MyTypography>
-                ))}
+                {pages.map((page, index) => {
+                  let hrefPage = `#${convertUrl(page)}`;
+
+                  return (
+                    <MyTypography
+                      href={hrefPage}
+                      key={index}
+                      variant="span"
+                      component="a"
+                    >
+                      {page}
+                    </MyTypography>
+                  );
+                })}
               </Grid>
               {/* Nonprofits */}
               <Grid
+                data-aos="fade-up"
+                data-delay="500"
                 sx={{
                   paddingTop: '20px',
                 }}
@@ -224,6 +237,8 @@ function Footer({ pages }) {
               </Grid>
               {/* SOCIALS */}
               <Grid
+                data-aos="fade-up"
+                data-delay="500"
                 sx={{
                   display: 'flex',
                   justifyContent: 'space-around',
@@ -264,6 +279,8 @@ function Footer({ pages }) {
             </Grid>
           </Box>
           <Box
+            data-aos="fade-up"
+            data-delay="500"
             sx={{
               height: '1px',
               margin: '40px 0',

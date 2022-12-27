@@ -27,7 +27,7 @@ function Wish({ id }) {
       }}
     >
       {/* LEFT */}
-      <Box data-aos="fade-left">
+      <Box data-aos="fade-up">
         <Typography variant="p">CALL TO ACTION</Typography>
         <Typography variant="h3" component="h4" sx={{ py: 4 }}>
           Lets Create Something Great Together!
@@ -68,7 +68,7 @@ function Wish({ id }) {
           alignItems: 'center',
           position: 'relative',
         }}
-        data-aos="fade-right"
+        data-aos="fade-up"
       >
         <Image
           src={images.about}
@@ -91,6 +91,8 @@ function Wish({ id }) {
   );
 }
 
-Wish.propTypes = {};
+Wish.propTypes = {
+  id: PropTypes.string,
+};
 
 export default Wish;

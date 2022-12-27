@@ -5,10 +5,9 @@ import classNames from 'classnames/bind';
 import images from '../../../assets/images';
 import Image from '../../../components/Image';
 import styles from '../Home.module.scss';
-import TypeIt from "typeit-react";
+import TypeIt from 'typeit-react';
 // import language
 import { useTranslation } from 'react-i18next';
-
 
 const cx = classNames.bind(styles);
 
@@ -19,7 +18,6 @@ function About({ id }) {
     justifyContent: 'center',
   }));
   const { t } = useTranslation();
-
 
   return (
     <Container
@@ -32,11 +30,12 @@ function About({ id }) {
           xs: 'repeat(1, 1fr)',
           lg: 'repeat(2, 1fr)',
         },
-        pt: 10,
+        pt: { sm: 10, xs: 5 },
+        gap: { xs: 3, lg: 0 },
       }}
     >
       {/* LEFT */}
-      <MyBox data-aos="fade-right">
+      <MyBox data-aos="fade-up">
         {/* <Typography
           variant="span"
           sx={{ textTransform: 'uppercase', color: 'orange' }}
@@ -51,14 +50,13 @@ function About({ id }) {
             color: 'var(--primary)',
           }}
         >
-          <TypeIt options={{
-            loop: true,
-            waitUntilVisible: true,
-          }}
+          <TypeIt
+            options={{
+              waitUntilVisible: true,
+            }}
           >
             {t('content.about_us_title')}
           </TypeIt>
-
         </Typography>
         <Typography
           variant="p"
@@ -89,7 +87,8 @@ function About({ id }) {
       </MyBox>
 
       {/* RIGHT */}
-      <Box data-aos="fade-left"
+      <Box
+        data-aos="fade-up"
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -106,8 +105,8 @@ function About({ id }) {
             position: 'absolute',
             p: 3,
             maxWidth: '300px',
-            left: '139px',
-            bottom: '50px',
+            left: { xs: '30%', sm: '50%', lg: '139px' },
+            bottom: { xs: '-40px', lg: '50px' },
           }}
         >
           <Typography variant="h6"></Typography>

@@ -5,23 +5,73 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from '../Home.module.scss';
 const cx = classNames.bind(styles);
-function TimelineItem({ title, desc, icon, time, classname, separateRight, left, right}) {
+function TimelineItem({
+  title,
+  desc,
+  icon,
+  time,
+  classname,
+  separateRight,
+  left,
+  right,
+}) {
   const MyBox = styled(Box)(({ theme }) => ({
     position: 'relative',
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    padding: '0px 0 50px 0',
-    '&::after': {
-      content: '""',
-      width: '5px',
-      height: '100%',
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      borderRight: '3px dashed #000',
+
+    [theme.breakpoints.up('md')]: {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      padding: '0px 0 50px 0',
+
+      '&::after': {
+        content: '""',
+        width: '5px',
+        height: '100%',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        borderRight: '3px dashed #000',
+      },
+    },
+
+    [theme.breakpoints.down('md')]: {
+      gridTemplateColumns: 'repeat(1, 1fr)',
+      padding: '0px 0 0 80px',
+
+      '&::after': {
+        content: '""',
+        width: '5px',
+        height: '100%',
+        position: 'absolute',
+        top: '50%',
+        left: "25px",
+        transform: 'translateY(-50%)',
+        borderRight: '3px dashed #000',
+      },
     },
   }));
+  const Timer = styled(Paper)(({ theme }) => ({
+    [theme.breakpoints.up('md')]: {
+      padding: 20,
+      backgroundColor: 'white',
+      position: 'absolute',
+      top: '30%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 1,
+    },
+    [theme.breakpoints.down('md')]: {
+      padding: 12,
+      backgroundColor: 'white',
+      position: 'absolute',
+      top: '30%',
+      left: 0,
+      transform: 'translateY(-50%)',
+      zIndex: 1,
+    },
+  }));
+
   const Title = styled(Typography)(({ theme }) => ({
     position: 'relative',
   }));
@@ -31,7 +81,7 @@ function TimelineItem({ title, desc, icon, time, classname, separateRight, left,
   });
 
   return (
-    <MyBox className={classes} >
+    <MyBox className={classes}>
       {/* Left */}
       <Box
         sx={{
@@ -71,19 +121,7 @@ function TimelineItem({ title, desc, icon, time, classname, separateRight, left,
       </Box>
 
       {/* Line middle */}
-      <Paper
-        sx={{
-          p: 2,
-          backgroundColor: 'white',
-          position: 'absolute',
-          top: '30%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 1,
-        }}
-      >
-        {time}
-      </Paper>
+      <Timer>{time}</Timer>
     </MyBox>
   );
 }

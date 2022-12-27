@@ -27,8 +27,9 @@ function App() {
     Aos.init({
       duration: 2000,
       delay: 200,
+      // once: true,
       once: false
-    })
+    });
   }, []);
   return (
     <Router>
@@ -36,8 +37,6 @@ function App() {
         <SyncLoader color="#d32f2fd6" cssOverride={override} />
       ) : (
         <Routes>
-
-
           <Route
             path="/"
             element={

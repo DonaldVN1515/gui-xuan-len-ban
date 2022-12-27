@@ -2,6 +2,7 @@ import { Box, Button } from '@mui/material';
 import classNames from 'classnames/bind';
 import React from 'react';
 import styles from './Header.module.scss';
+import { convertUrl } from '../../../hooks';
 const cx = classNames.bind(styles);
 function Nav({ pages, hash, onClick }) {
   return (
@@ -15,14 +16,14 @@ function Nav({ pages, hash, onClick }) {
       }}
     >
       {/* Error with space string */}
-      {pages.map((page) => {
-        console.log('IsEqual', hash === `#${page}`);
+      {pages.map((page, index) => {
+        let hrefPage = `#${convertUrl(page)}`;
         return (
           <Button
-            href={`#${page}`}
+            href={hrefPage}
             // component={NavLink}
-            className={cx(hash === `#${page}` ? 'active' : '')}
-            key={page}
+            className={cx(hash === hrefPage ? 'active' : '')}
+            key={index}
             onClick={onClick}
             sx={{
               mx: {

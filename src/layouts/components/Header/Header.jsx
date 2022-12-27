@@ -31,7 +31,7 @@ import SideBar from './Sidebar';
 const cx = classNames.bind(styles);
 
 function Header({ pages }) {
-  const [setAnchorElNav] = React.useState(null);
+  const [, setAnchorElNav] = React.useState(null);
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -121,7 +121,13 @@ function Header({ pages }) {
               <MenuIcon />
             </IconButton>
           </Box>
-          <SideBar open={open} onClose={toggleSlider} pages={pages} />
+          <SideBar
+            open={open}
+            onClose={toggleSlider}
+            pages={pages}
+            hash={hash}
+            // onClick={handleCloseNavMenu}
+          />
 
           {/* LOGO ON MOBILE */}
           <Typography
@@ -132,7 +138,6 @@ function Header({ pages }) {
             sx={{
               flexGrow: 1,
               mr: 2,
-              color: '#000',
               display: { xs: 'flex', md: 'none' },
               color: 'inherit',
               minWidth: '80px',

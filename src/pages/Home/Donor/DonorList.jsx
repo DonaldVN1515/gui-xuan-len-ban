@@ -25,9 +25,7 @@ export default function DonorList({ data }) {
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: '100px',
       }}
-      
     >
       {data.map((item, index) => (
         <ImageListItem
@@ -41,9 +39,14 @@ export default function DonorList({ data }) {
               // alignItems: 'center',
             }
           }
-          
         >
-          <Image src={item.imageUrl} alt={item.title} className={cx('image')} data-aos="fade-down" data-aos-anchor-placement="top-bottom"/>
+          <Image
+            src={item.imageUrl}
+            alt={item.title}
+            className={cx('image')}
+            data-aos="fade-up"
+            data-delay="500"
+          />
           <Typography
             variant="h6"
             component="h6"

@@ -53,7 +53,7 @@ function Header() {
     // display:"none",
   }));
   const MyContainer = styled(Container)(({ theme }) => ({
-    padding: '0 100px',
+    // padding: '0 100px',
   }));
 
   const context = React.useContext(ThemeContext);
@@ -211,11 +211,15 @@ function Header() {
 
           {/* RIGHT */}
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-            <Button onClick={context.toggleTheme}>Dark Mode</Button>
+            {/* <Button onClick={context.toggleTheme}>Dark Mode</Button> */}
             {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
-            <LanguageMenu onClick={changeLang} />
-            <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
-            <Typography
+            <Box sx={{}}>
+              <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
+            </Box>
+            <Box sx={{margin:'0 20px 0 10px'}}>
+              <LanguageMenu onClick={changeLang} />
+            </Box>
+            {/* <Typography
               variant="h6"
               noWrap
               component="a"
@@ -231,7 +235,7 @@ function Header() {
               }}
             >
               +161 94 32 141
-            </Typography>
+            </Typography> */}
             <Button
               variant="outlined"
               color="error"

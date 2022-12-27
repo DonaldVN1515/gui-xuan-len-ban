@@ -33,7 +33,9 @@ function About(props) {
       }}
     >
       {/* LEFT */}
-      <MyBox sx={{ paddingLeft: '120px' }}>
+      <MyBox sx={{ 
+        // paddingLeft: '120px',
+        }}>
         <Typography
           variant="span"
           sx={{ textTransform: 'uppercase', color: 'orange' }}
@@ -90,8 +92,8 @@ function About(props) {
             position: 'absolute',
             p: 3,
             maxWidth: '300px',
-            left: '139px',
-            bottom: '165px',
+            left: '109px',
+            bottom: '98px',
           }}
         >
           <Typography variant="h6"></Typography>

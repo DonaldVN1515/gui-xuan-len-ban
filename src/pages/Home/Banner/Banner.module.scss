@@ -1,40 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-.wrapper{
-    height: calc(100vh - 100px);
-    background: url(../../../assets/images/slides/banner-main.png) no-repeat center;
-    background-size: cover;
-    position: relative;
-    .banner-title{
-        color: rgba(242, 232, 232, 0.93);
-        // background: -webkit-linear-gradient(#eee, #333);
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent;
-        font-size: 130px;
-        font-family: 'Bangers', cursive;
-        position: absolute;
-        z-index: 1;
-        left: 35%;
-        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.915), 0px -4px 10px rgba(49, 11, 11, 0.782);
-        letter-spacing: 5px;
-    }
-    .flower-1{
-        position: absolute;
-        bottom: 31%;
-        left: 26%;
-        transform: rotate(-41deg);
-    }
-    .flower-2{
-        position: absolute;
-        bottom: -5%;
-        right: 35%;
-        transform: rotate(-225deg); 
-    }
-    .flower-3{
-        position: absolute;
-        bottom: 16%;
-        right: 44%;
-        transform: rotate(-205deg);
-        
-    }
-}
+.wrapper {
+  height: calc(100vh - 100px);
+  background: url(../../../assets/images/slides/banner-main.png) no-repeat
+    center;
+  background-size: cover;
+  position: relative;
 
+  
+  .banner-title {
+    color: rgba(242, 232, 232, 0.93);
+    // background: -webkit-linear-gradient(#eee, #333);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    font-size: 130px;
+    font-family: 'Bangers', cursive;
+    position: absolute;
+    left: 35%;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.915),
+      0px -4px 10px rgba(49, 11, 11, 0.782);
+    letter-spacing: 5px;
+    z-index: 1;
+  }
+  .flower-1 {
+    position: absolute;
+    bottom: 31%;
+    left: 26%;
+    transform: rotate(-41deg);
+  }
+  .flower-2 {
+    position: absolute;
+    bottom: -5%;
+    right: 35%;
+    transform: rotate(-225deg);
+  }
+  .flower-3 {
+    position: absolute;
+    bottom: 16%;
+    right: 44%;
+    transform: rotate(-205deg);
+  }
+}

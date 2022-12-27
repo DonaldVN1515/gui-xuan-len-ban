@@ -10,7 +10,7 @@ function Donor({ title, data }) {
     position: 'relative',
     fontWeight: 'bold',
     padding: '10px 0',
-    marginBottom:'20px',
+  
     // '&::after': {
     //   content: '""',
     //   position: 'absolute',
@@ -41,7 +41,6 @@ function Donor({ title, data }) {
     <Container
       maxWidth="xl"
       sx={{
-        padding: '100px 100px 0 100px',
         width: '50%',
       }}
       disableGutters={true}

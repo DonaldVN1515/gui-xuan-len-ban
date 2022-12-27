@@ -45,11 +45,15 @@ const contributorData = [
   },
   {
     title: '',
-    imageUrl: images.bitcLogo,
+    imageUrl: images.bclubLogo,
   },
   {
     title: '',
-    imageUrl: images.bitcLogo,
+    imageUrl: images.dragonLogo,
+  },
+  {
+    title: '',
+    imageUrl: images.katkunstLogo,
   },
 ];
 
@@ -64,19 +68,13 @@ function Home(props) {
       <About />
 
       {/* Timeline */}
-<<<<<<< HEAD
-      <Timeline 
-        
-      />
-=======
       <Timeline />
 
       {/* Donate */}
       <Donate />
 
 
->>>>>>> origin/main
-      <Box>
+      <Box className={cx('donor')}>
         {/* Nha Tai Tro - Donor */}
         {/* <Donor title="Nhà tài trợ" data={donorData} className={cx('donor')}/> */}
         {/* Don Vi To Chuc - Organization */}

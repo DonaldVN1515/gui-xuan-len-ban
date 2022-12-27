@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
+import { Box } from '@mui/material';
 
 const languages = ['Tiếng Việt', 'English'];
 
@@ -18,15 +19,16 @@ export default function Language({ onClick }) {
 
   return (
     <div>
-      <Button
+      <Box
         id="fade-button"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        sx={{cursor:'pointer', color:'#3c3b3b'}}
       >
-        Language
-      </Button>
+        <i className="fa-solid fa-earth-americas"></i>
+      </Box>
       <Menu
         id="fade-menu"
         MenuListProps={{

@@ -12,50 +12,12 @@ const override = {
 };
 
 function App() {
-<<<<<<< HEAD
-	let [loading, setLoading] = useState(true);
-	useEffect (()=>{
-		setLoading(true)
-		setTimeout(()=>{
-			setLoading(false)
-
-		},1000)
-	},[])
-	return (
-		<Router>
-			{
-				loading ?
-					<SyncLoader color="#d32f2fd6" cssOverride={override}/>
-
-				:
-				<Routes>
-					<Route
-						path='/'
-						element={
-							<DefaultLayout>
-								<Home />
-							</DefaultLayout>
-						}
-					/>
-					<Route
-						path='*'
-						element={
-							<DefaultLayout>
-								<Home />
-							</DefaultLayout>
-						}
-					/>
-				</Routes>
-			}
-		</Router>
-	);
-=======
   let [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 1500);
   }, []);
   return (
     <Router>
@@ -83,7 +45,6 @@ function App() {
       )}
     </Router>
   );
->>>>>>> origin/main
 }
 
 export default App;

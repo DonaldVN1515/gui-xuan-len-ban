@@ -16,7 +16,7 @@ DonorList.propTypes = {
 
 export default function DonorList({ data }) {
   return (
-    <ImageList gap={40} sx={{ display: 'flex', marginBottom:'100px' }}>
+    <ImageList gap={40} sx={{ display: 'flex' }}>
       {data.map((item, index) => (
         <ImageListItem
           key={index}
@@ -25,6 +25,7 @@ export default function DonorList({ data }) {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
+            cursor:'pointer',
           }}
         >
           <Image src={item.imageUrl} alt={item.title} className={cx('image')} />

@@ -50,7 +50,7 @@ function Footer({ pages }) {
   // }));
 
   return (
-    <Wrapper>
+    <Wrapper data-aos="fade-up" data-aos-duration="4000">
       <Container maxWidth="xl">
         {/* <MyBox>
           <MyGrid container>
@@ -104,7 +104,7 @@ function Footer({ pages }) {
         <Box>
           <Box>
             <Grid
-              data-aos="fade-up"
+              // data-aos="fade-up"
               sx={{
                 display: { sm: 'grid', md: 'flex' },
                 justifyContent: 'space-between',
@@ -118,7 +118,7 @@ function Footer({ pages }) {
             >
               {/* LOGO */}
               <Grid
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 data-delay="500"
                 sx={{
                   display: { xs: 'block', md: 'block' },
@@ -167,7 +167,7 @@ function Footer({ pages }) {
               </Grid>
               {/* PAGES */}
               <Grid
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 data-delay="500"
                 sx={{
                   paddingTop: '20px',
@@ -204,7 +204,7 @@ function Footer({ pages }) {
               </Grid>
               {/* Nonprofits */}
               <Grid
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 data-delay="500"
                 sx={{
                   paddingTop: '20px',
@@ -237,7 +237,7 @@ function Footer({ pages }) {
               </Grid>
               {/* SOCIALS */}
               <Grid
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 data-delay="500"
                 sx={{
                   display: 'flex',
@@ -279,7 +279,7 @@ function Footer({ pages }) {
             </Grid>
           </Box>
           <Box
-            data-aos="fade-up"
+            // data-aos="fade-up"
             data-delay="500"
             sx={{
               height: '1px',
@@ -289,6 +289,7 @@ function Footer({ pages }) {
           ></Box>
           <Box>
             <Typography
+              // data-aos="fade-up"
               variant="p"
               component="p"
               sx={{

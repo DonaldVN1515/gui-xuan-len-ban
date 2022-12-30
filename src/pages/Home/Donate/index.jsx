@@ -28,6 +28,7 @@ function Donate({ id }) {
     color: 'white',
     background: 'linear-gradient(#E58C8A,#EEC0C6)',
     padding: '50px 0 100px 0',
+    display:'none',
 
     [theme.breakpoints.up('md')]: {
       padding: '50px 0 100px 0',
@@ -107,6 +108,7 @@ function Donate({ id }) {
         maxWidth="xl"
         sx={{
           paddingTop: '150px',
+          display:'none'
         }}
       >
         <Box

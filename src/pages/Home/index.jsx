@@ -36,7 +36,7 @@ const organizationData = [
   },
   {
     title: '',
-    imageUrl: images.btecLogo,
+    imageUrl: images.chuaLogo,
   },
 ];
 const contributorData = [

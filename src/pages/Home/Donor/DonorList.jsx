@@ -21,7 +21,6 @@ export default function DonorList({ data }) {
       sx={{
         gap: 10,
         display: 'flex',
-
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',

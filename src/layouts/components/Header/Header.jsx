@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 // import { ThemeContext } from '../../../components/context/ThemeProvider';
 // import language
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../components/Translation/i18n';
+import i18n from '../../../components/translation/i18n';
 
 import LanguageMenu from './LanguageMenu';
 
@@ -47,9 +47,6 @@ function Header({ pages }) {
     // todo: change the alpha of box shadows when scrolling
     boxShadow: 'none',
     // display:"none",
-  }));
-  const MyContainer = styled(Container)(({ theme }) => ({
-    padding: '0 100px',
   }));
 
   // const context = React.useContext(ThemeContext);
@@ -86,8 +83,13 @@ function Header({ pages }) {
   return (
     <Header position="fixed" className={cx('dark')}>
       {/* <Header position="fixed" > */}
-      <MyContainer maxWidth="xl" disableGutters={true}>
-        <Toolbar disableGutters>
+      <Container maxWidth="xl">
+        <Toolbar
+          disableGutters
+          sx={{
+            justifyContent: 'space-between',
+          }}
+        >
           {/* LOGO */}
           <Typography
             variant="h6"
@@ -181,22 +183,22 @@ function Header({ pages }) {
                   marginRight: 2.5,
                 }}
               >
-                {page}
-              </Button>
-            ))}
-          </Box>
+                +161 94 32 141
+              </Typography> */}
+              {/* DARKMODE */}
+              {/* <Button onClick={context.toggleTheme}>Dark Mode</Button> */}
+              {/* <Darkmode /> */}
+              {/* LANGUAGE TRANSLATION */}
+              {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
+              <LanguageMenu onClick={changeLang} />
+            </Box>
 
-          {/* RIGHT */}
-          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-            <Button onClick={context.toggleTheme}>Dark Mode</Button>
-            {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
-            <LanguageMenu onClick={changeLang} />
-            <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
+            <Button
+              href="https://thiennguyen.app/user/hominhthanh1"
+              target="_blank"
+              variant="outlined"
+              color="inherit"
+              className={cx('btn__primary')}
               sx={{
                 display: { xs: 'none', sm: 'block' },
                 border: 2,
@@ -208,8 +210,10 @@ function Header({ pages }) {
                 },
               }}
             >
-              +161 94 32 141
-            </Typography>
+              {t('content.btn_donation')}
+            </Button>
+
+            {/* RESPONSIVE ON MOBILE */}
             <Button
               href="https://thiennguyen.app/user/hominhthanh1"
               target="_blank"

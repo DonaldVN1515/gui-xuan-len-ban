@@ -5,6 +5,7 @@ const images = {
   dragonLogo: require('./logos/logo-dragon.png'),
   bclubLogo: require('./logos/logo-bclub.png'),
   katkunstLogo: require('./logos/logo-katkunst.png'),
+  chuaLogo: require('./logos/logo-chua.png'),
   // About
   about: require('./about/about.jpg'),
   brush: require('./about/brush.png'),

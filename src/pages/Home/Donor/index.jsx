@@ -10,7 +10,8 @@ function Donor({ title, data }) {
     position: 'relative',
     fontWeight: 'bold',
     padding: '10px 0',
-  
+    textAlign: 'center',
+
     // '&::after': {
     //   content: '""',
     //   position: 'absolute',
@@ -41,9 +42,9 @@ function Donor({ title, data }) {
     <Container
       maxWidth="xl"
       sx={{
-        width: '50%',
+        width: '70%',
       }}
-      
+
       // disableGutters={true}
     >
       {/* title */}
@@ -54,9 +55,13 @@ function Donor({ title, data }) {
           alignItems: 'center',
           py: 5,
         }}
-        
       >
-        <MyTypography variant="h5" component="h4" data-aos="fade-up"> 
+        <MyTypography
+          variant="h5"
+          component="h4"
+          data-aos="fade-up"
+          sx={{ mb: 2 }}
+        >
           {title}
         </MyTypography>
 

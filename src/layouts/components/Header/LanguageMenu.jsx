@@ -1,14 +1,12 @@
 import { faEarthAsia } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconButton } from '@mui/material';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import Menu from '@mui/material/Menu';
 import classNames from 'classnames/bind';
 import * as React from 'react';
 import styles from './Header.module.scss';
-import { IconButton } from '@mui/material';
-
 const languages = ['Tiếng Việt', 'English'];
 const cx = classNames.bind(styles);
 export default function Language({ onClick }) {
@@ -23,16 +21,20 @@ export default function Language({ onClick }) {
 
   return (
     <div>
-      <Button
+      <IconButton
+        sx={{
+          cursor: 'pointer',
+          p: { md: 0.5, lg: 2 },
+          mr: 2,
+        }}
         id="fade-button"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        sx={{cursor:'pointer', color:'#3c3b3b'}}
       >
-        Language
-      </Button>
+        <FontAwesomeIcon icon={faEarthAsia} className={cx('language__icon')} />
+      </IconButton>
       <Menu
         sx={{
           mt: 2,

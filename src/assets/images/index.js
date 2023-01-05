@@ -3,8 +3,10 @@ const images = {
   bitcLogo: require('./logos/logo-bitc.png'),
   btecLogo: require('./logos/logo-btec.png'),
   dragonLogo: require('./logos/logo-dragon.png'),
+  dragonLogo1: require('./logos/logo-dragon1.png'),
   bclubLogo: require('./logos/logo-bclub.png'),
   katkunstLogo: require('./logos/logo-katkunst.png'),
+  katkunstLogo1: require('./logos/logo-katkunst1.png'),
   chuaLogo: require('./logos/logo-chua.png'),
   // About
   about: require('./about/about.jpg'),

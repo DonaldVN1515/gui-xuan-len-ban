@@ -19,42 +19,33 @@ export default function DonorList({ data }) {
     <ImageList
       gap={40}
       sx={{
-        gap: 10,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
+        overflowY: 'unset',
       }}
     >
-      {data.map((item, index) => (
-        <ImageListItem
-          key={index}
-          sx={
-            {
-              // display: 'flex',
-              // flexWrap: 'wrap',
-              // flexDirection: 'column',
-              // justifyContent: 'center',
-              // alignItems: 'center',
-            }
-          }
-        >
-          <Image
-            src={item.imageUrl}
-            alt={item.title}
-            className={cx('image')}
-            data-aos="fade-up"
-            data-delay="500"
-          />
-          <Typography
+      {data.map((item, index) => {
+        return (
+          <ImageListItem key={index}>
+            <Image
+              src={item.imageUrl}
+              alt={item.title}
+              className={cx('image')}
+              data-aos="fade-up"
+              data-delay="500"
+            />
+            {/* <Typography
             variant="h6"
             component="h6"
             sx={{ textAlign: 'center', py: 1 }}
           >
             {item.title}
-          </Typography>
-        </ImageListItem>
-      ))}
+          </Typography> */}
+          </ImageListItem>
+        );
+      })}
     </ImageList>
   );
 }

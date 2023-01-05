@@ -42,19 +42,19 @@ const organizationData = [
 const contributorData = [
   {
     title: '',
+    imageUrl: images.katkunstLogo1,
+  },
+  {
+    title: 'bitc',
     imageUrl: images.bitcLogo,
   },
   {
     title: '',
+    imageUrl: images.dragonLogo1,
+  },
+  {
+    title: '',
     imageUrl: images.bclubLogo,
-  },
-  {
-    title: '',
-    imageUrl: images.dragonLogo,
-  },
-  {
-    title: '',
-    imageUrl: images.katkunstLogo,
   },
 ];
 

@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import PropTypes from 'prop-types';
@@ -27,7 +27,7 @@ export default function DonorList({ data }) {
       }}
     >
       {data.map((item, index) => (
-        <ImageListItem
+        <a
           key={index}
           sx={
             {
@@ -38,6 +38,7 @@ export default function DonorList({ data }) {
               // alignItems: 'center',
             }
           }
+          href={item.pageLink}
         >
           <Image
             src={item.imageUrl}
@@ -53,7 +54,7 @@ export default function DonorList({ data }) {
           >
             {item.title}
           </Typography>
-        </ImageListItem>
+        </a>
       ))}
     </ImageList>
   );

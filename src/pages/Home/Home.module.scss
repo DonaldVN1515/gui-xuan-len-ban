@@ -11,7 +11,7 @@
   align-items: center;
   cursor: pointer;
 }
-.donor{
+.donor {
   margin: 100px 0;
 }
 
@@ -25,23 +25,29 @@
 }
 
 .right::after {
-  left: 0;
-  bottom: -8px;
+  right: -124px;
+  bottom: -88px;
   position: absolute;
   content: '';
   width: 100px;
   height: 5px;
   border-radius: 5px;
-  background: linear-gradient(-135deg, #d32f2fd6, orange);
+  // background: linear-gradient(-135deg, #d32f2fd6, orange);
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 60px solid var(--primary);
 }
 .separateRight .right::after {
-  left: unset;
-  right: 0;
+  transform: rotate(180deg);
+  right: 571px;
 }
 
 @media screen and (max-width: 900px) {
   .timeline {
     direction: unset;
+  }
+  .right::after {
+    display: none;
   }
   .separateRight .right::after {
     left: 0;
@@ -184,10 +190,12 @@ button {
 // DONATE
 .donate__image {
   width: 400px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  // border: 6px solid var(--primary);
 }
 .image__item {
   width: 300px;
-  border: 8px solid white;
+  // border: 6px solid var(--primary);
 }
 
 @media screen and (max-width: 900px) {
@@ -201,7 +209,6 @@ button {
 
 // WISH
 .wish__image {
-  
   width: 200px;
   height: 100%;
   filter: grayscale(100%);
@@ -227,4 +234,25 @@ button {
   overflow: hidden;
 }
 
-//Address
+//PLACES
+.place {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.place:hover .place__image {
+  filter: unset;
+  transform: scale(1.1);
+}
+.place:hover .place__title {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+}
+.place__image {
+  filter: grayscale(100%);
+  transition: all 0.25s linear;
+}
+.place__title {
+  transition: all 0.2s linear;
+}

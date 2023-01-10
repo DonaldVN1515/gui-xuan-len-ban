@@ -30,7 +30,7 @@ import SideBar from './Sidebar';
 
 const cx = classNames.bind(styles);
 
-function Header({ pages }) {
+function Header({ pages, id }) {
   const [, setAnchorElNav] = React.useState(null);
 
   const handleCloseNavMenu = () => {
@@ -83,7 +83,7 @@ function Header({ pages }) {
   return (
     <Header position="fixed" className={cx('dark')}>
       {/* <Header position="fixed" > */}
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" id={id}>
         <Toolbar
           disableGutters
           sx={{

@@ -1,11 +1,10 @@
-import { Button, Typography } from '@mui/material';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 
-import Image from '../../../components/Image';
 import classNames from 'classnames/bind';
+import Image from '../../../components/Image';
 import styles from '../Home.module.scss';
 
 const cx = classNames.bind(styles);
@@ -19,13 +18,23 @@ export default function DonorList({ data }) {
     <ImageList
       gap={40}
       sx={{
-        gap: 10,
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'center',
         alignItems: 'center',
+        overflowY: 'unset',
       }}
     >
+      {data.map((item, index) => {
+        return (
+          <ImageListItem key={index}>
+            <Image
+              src={item.imageUrl}
+              alt={item.title}
+              className={cx('image')}
+              data-aos="fade-up"
+            />
+            {/* <Typography
       {data.map((item, index) => (
         <a
           key={index}
@@ -53,9 +62,10 @@ export default function DonorList({ data }) {
             sx={{ textAlign: 'center', py: 1 }}
           >
             {item.title}
-          </Typography>
-        </a>
-      ))}
+          </Typography> */}
+          </ImageListItem>
+        );
+      })}
     </ImageList>
   );
 }

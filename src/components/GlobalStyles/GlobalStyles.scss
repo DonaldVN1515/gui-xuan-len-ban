@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  transition: all 3s linear;
 }
 
 // Custom scroll bar
@@ -26,6 +27,7 @@ html *::-webkit-scrollbar-thumb {
   background-color: var(--primary);
   display: none;
 }
+
 .dark {
   background-color: black;
 }

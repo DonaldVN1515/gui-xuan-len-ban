@@ -3,8 +3,10 @@ const images = {
   bitcLogo: require('./logos/logo-bitc.png'),
   btecLogo: require('./logos/logo-btec.png'),
   dragonLogo: require('./logos/logo-dragon.png'),
+  dragonLogo1: require('./logos/logo-dragon1.png'),
   bclubLogo: require('./logos/logo-bclub.png'),
   katkunstLogo: require('./logos/logo-katkunst.png'),
+  katkunstLogo1: require('./logos/logo-katkunst1.png'),
   chuaLogo: require('./logos/logo-chua.png'),
   // About
   about: require('./about/about.jpg'),
@@ -12,6 +14,18 @@ const images = {
 
   // slides
   flower: require('./slides/hoa.png'),
+
+  // PLACES
+  aDinh: require('./places/a-dinh.jpg'),
+  canDon: require('./places/can-don1.jpg'),
+  laBo: require('./places/la-bo.jpg'),
+  spring: require('./places/spring.jpg'),
+  abat: require('./places/abat.jpg'),
+  commingSoon: require('./places/comming-soon.jpg'),
+
+  // DONATE
+  donate: require('./donate.jpg'),
+  donate1: require('./donate1.jpg'),
 
   // SVG
   icon: require('./svg/icon.svg'),

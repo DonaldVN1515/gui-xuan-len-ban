@@ -1,64 +1,52 @@
 import { Box, Container, Paper, styled, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
-import React, { useState } from 'react';
+import React from 'react';
+import images from '../../../assets/images';
 import Image from '../../../components/Image';
 import styles from '../Home.module.scss';
-import Countup from 'react-countup';
-import ScrollTrigger from 'react-scroll-trigger';
 
 const cx = classNames.bind(styles);
 
 function Donate({ id }) {
-  const donateData = [
-    {
-      quantity: 15,
-      subtitle: 'INREDIBLE VOLUNTEERS',
-    },
-    {
-      quantity: 15,
-      subtitle: 'INREDIBLE VOLUNTEERS',
-    },
-    {
-      quantity: 15,
-      subtitle: 'INREDIBLE VOLUNTEERS',
-    },
-  ];
-
   const Wrapper = styled(Box)(({ theme }) => ({
-    color: 'white',
-    background: 'linear-gradient(#E58C8A,#EEC0C6)',
+    // color: 'white',
+    // background: '#d32f2fd6',
     padding: '50px 0 100px 0',
-    display:'none',
+    // display:'none',
 
     [theme.breakpoints.up('md')]: {
       padding: '50px 0 100px 0',
     },
     [theme.breakpoints.down('md')]: {
-      padding: '50px 0 0 0',
+      padding: '10px 0 0 0',
     },
   }));
   const ImageTop = styled(Box)(({ theme }) => ({
     position: 'absolute',
+    boxShadow:
+      'rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px',
+
     [theme.breakpoints.up('md')]: {
-      top: '-160px',
+      top: '-20px',
       right: '140px',
     },
     [theme.breakpoints.down('md')]: {
-      top: '-260px',
+      top: '10px',
       right: '0',
+      width: '250px',
     },
   }));
 
   const DonateMoney = styled(Paper)(({ theme }) => ({
     [theme.breakpoints.up('md')]: {
       right: '120px',
-      bottom: '-60px',
+      bottom: '-100px',
     },
     [theme.breakpoints.down('md')]: {
       right: '20px',
-      bottom: '-120px',
+      bottom: '-150px',
     },
-    color: 'inherit',
+    color: 'white',
     position: 'absolute',
     padding: '20px 0px 30px 40px',
     maxWidth: '300px',
@@ -82,24 +70,36 @@ function Donate({ id }) {
     },
   }));
 
-  const Bottom = styled(Box)(({ theme }) => ({
-    width: '100%',
-    gap: 5,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    position: 'absolute',
-    left: 0,
+  // const donateData = [
+  //   {
+  //     quantity: 15,
+  //     subtitle: 'INREDIBLE VOLUNTEERS',
+  //   },
+  //   {
+  //     quantity: 15,
+  //     subtitle: 'INREDIBLE VOLUNTEERS',
+  //   },
+  //   {
+  //     quantity: 15,
+  //     subtitle: 'INREDIBLE VOLUNTEERS',
+  //   },
+  // ];
+  // const Bottom = styled(Box)(({ theme }) => ({
+  //   width: '100%',
+  //   gap: 5,
+  //   display: 'flex',
+  //   flexWrap: 'wrap',
+  //   justifyContent: 'space-between',
+  //   position: 'absolute',
+  //   left: 0,
 
-    [theme.breakpoints.up('md')]: {
-      bottom: '-170px',
-    },
-    [theme.breakpoints.down('md')]: {
-      bottom: '-30px',
-    },
-  }));
-
-  const [counterOn, setCounterOn] = useState(false);
+  //   [theme.breakpoints.up('md')]: {
+  //     bottom: '-170px',
+  //   },
+  //   [theme.breakpoints.down('md')]: {
+  //     bottom: '-30px',
+  //   },
+  // }));
 
   return (
     <Wrapper>
@@ -107,72 +107,124 @@ function Donate({ id }) {
         id={id}
         maxWidth="xl"
         sx={{
-          paddingTop: '150px',
-          display:'none'
+          paddingTop: '100px',
+          // display:'none'
         }}
       >
+        <Typography
+          variant="span"
+          sx={{
+            display: 'content',
+            fontFamily: 'Dancing Script',
+            height: '209px',
+            fontSize: { xs: '45px', md: '70px' },
+            color: 'var(--primary)',
+          }}
+          data-aos="fade-up"
+        >
+          Đề xuất tài trợ
+        </Typography>
         <Box
           sx={{
-            padding: { xs: '250px 0 70px 0', md: '150px 0 70px 0' },
+            padding: { xs: '30px 0 0px 0', md: '50px 0 0px 0' },
             display: 'grid',
             gridTemplateColumns: { xs: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' },
             position: 'relative',
             gap: { xs: 20, md: 0 },
           }}
+          data-aos="fade-up"
         >
           {/* LEFT */}
           <Box
-            sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}
+            sx={{
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              pt: 20,
+            }}
+            data-aos="zoom-in"
           >
             <Image
-              src=""
+              src={images.donate1}
               alt=""
               className={cx('donate__image')}
-              data-aos="zoom-in"
             />
             <ImageTop data-aos="zoom-in">
-              <Image src="" alt="" className={cx('image__item')} />
+              <Image src={images.donate} alt="" className={cx('image__item')} />
             </ImageTop>
             {/* DonateMoney */}
             <DonateMoney data-aos="fade-up">
-              <ScrollTrigger
+              {/* <ScrollTrigger
                 onEnter={() => setCounterOn(true)}
-                // onExit={() => setCounterOn(false)}
+                onExit={() => setCounterOn(false)}
+              > */}
+              <Typography
+                variant="h5"
+                component="h6"
+                sx={{ fontSize: 40, mb: 1 }}
               >
-                <Typography
-                  variant="h5"
-                  component="h6"
-                  sx={{ fontSize: 40, mb: 1 }}
-                >
-                  {(counterOn && (
+                {/* {(counterOn && (
                     <Countup start={0} end={70} duration={2}></Countup>
                   )) ||
-                    70}
-                  tr
-                </Typography>
-              </ScrollTrigger>
+                    70} */}
+                70 tr
+              </Typography>
+              {/* </ScrollTrigger> */}
               <Typography variant="p">
                 Volunteers helping carry out our global mission
               </Typography>
             </DonateMoney>
           </Box>
           {/* RIGHT */}
-          <Box data-aos="fade-up">
-            <Typography variant="h4">How we're making a difference</Typography>
-            <Typography variant="p">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequatur distinctio quaerat neque maxime eos libero repellendus
-              voluptate commodi temporibus quis, eius culpa illum sequi,
-              repellat dolor quod cupiditate accusamus. Ratione.
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <Typography variant="p" data-aos="fade-up" data-aos-delay="500">
+              Ban tổ chức dự án thiện nguyện "Gùi Xuân Lên Bản" xin chân thành
+              cảm ơn Quý công ty. Chương trình của chúng tôi sẽ không thể thành
+              công nếu thiếu sự ủng hộ, hợp tác và đóng góp từ quý vị. Một lần
+              nữa, BTC xin gửi lời cảm ơn, chúc Quý công ty, Quý mạnh thường
+              quân luôn thành công và phát triển hưng thịnh!
             </Typography>
-            <Typography variant="p" sx={{ display: 'block' }}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequatur distinctio quaerat neque maxime eos libero repellendus
-              voluptate commodi temporibus quis, eius culpa illum sequi,
-              repellat dolor quod cupiditate accusamus. Ratione.
-            </Typography>
+            <Box sx={{ my: 3, display: 'grid', gap: 2 }}>
+              <Typography variant="p" data-aos="fade-up" data-aos-delay="500">
+                Các doanh nghiệp, tổ chức có thể tài trợ cho chương trình bằng
+                hiện kim, hiện vật, hoặc bằng việc hỗ trợ tổ chức chương trình.
+                Nhà tài trợ có thể tài trợ cho chương trình bằng cách trao tặng
+                sản phẩm của công ty mình kèm theo.
+              </Typography>
+              <Typography
+                variant="p"
+                sx={{ display: 'block' }}
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                - Hiện kim: Nhà tài trợ thanh toán cho ban tổ chức bằng tiền mặt
+                hoặc chuyển khoản cho đại diện của BTC. Địa điểm thanh toán do
+                BTC và Nhà tài trợ thỏa thuận. Thời gian thanh toán không muộn
+                hơn 3 ngày sau khi ký hợp đồng.
+              </Typography>
+              <Typography
+                variant="p"
+                sx={{ display: 'block' }}
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                - Hiện vật: Nhà tài trợ giao hiện vật cho đại diện của BTC. Địa
+                điểm giao nhận do BTC và Nhà tài trợ thỏa thuận. Hiện vật được
+                giao không muộn hơn 3 ngày sau khi ký hợp đồng.
+              </Typography>
+            </Box>
             <Box>
-              <button className={cx('learn-more')}>
+              <button
+                className={cx('learn-more')}
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <span className={cx('circle')} aria-hidden="true">
                   <span className={cx('icon')}>
                     <i className="fa-solid fa-angle-right"></i>
@@ -183,7 +235,7 @@ function Donate({ id }) {
             </Box>
           </Box>
           {/* BOTTOM */}
-          <Bottom data-aos="fade-up" data-delay="300">
+          {/* <Bottom>
             {donateData.map((data, index) => (
               <Paper
                 key={index}
@@ -194,7 +246,6 @@ function Donate({ id }) {
               >
                 <Box>
                   <Typography variant="h4" component="span">
-                    {/* <Countup start={0} end={data.quantity} duration={2} delay={2} />*/}
                     {(counterOn && (
                       <Countup start={0} end={data.quantity} duration={2} />
                     )) ||
@@ -217,7 +268,7 @@ function Donate({ id }) {
                 </Typography>
               </Paper>
             ))}
-          </Bottom>
+          </Bottom> */}
         </Box>
       </Container>
     </Wrapper>

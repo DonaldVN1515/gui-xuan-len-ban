@@ -5,19 +5,34 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import style from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
-import { ThemeContext } from '../components/Context/ThemeProvider';
+import { ThemeContext } from '../components/context/ThemeProvider';
+import { convertUrl } from '../hooks/convertUrl';
+
+// import language
+import { useTranslation } from 'react-i18next';
+
 const cx = classNames.bind(style);
 
 function DefaultLayout({ children }) {
+  const { t } = useTranslation();
+
+  const pages = [
+    t('content.home'),
+    t('content.about_us'),
+    t('content.timeline'),
+    t('content.donation'),
+    t('content.sponsors'),
+    t('content.wishes'),
+  ];
   const context = React.useContext(ThemeContext);
-
+  let hrefPage = `${convertUrl(t('content.home'))}`;
   return (
-    <Box className={cx(context.theme, 'wrapper')}>
-      <Header />
+    <Box className={cx(context.theme, 'wrapper')} id={hrefPage}>
+      <Header pages={pages} />
 
-      <Box sx={{ mt: '100px' }}>{children}</Box>
+      <Box sx={{ pt: '100px' }}>{children}</Box>
 
-      <Footer />
+      <Footer pages={pages} />
     </Box>
   );
 }

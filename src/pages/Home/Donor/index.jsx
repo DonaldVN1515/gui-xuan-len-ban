@@ -41,10 +41,10 @@ function Donor({ title, data }) {
     <Container
       maxWidth="xl"
       sx={{
-        padding: '100px 100px 0 100px',
         width: '50%',
       }}
-      disableGutters={true}
+      
+      // disableGutters={true}
     >
       {/* title */}
       <Box
@@ -54,8 +54,9 @@ function Donor({ title, data }) {
           alignItems: 'center',
           py: 5,
         }}
+        
       >
-        <MyTypography variant="h5" component="h4">
+        <MyTypography variant="h5" component="h4" data-aos="fade-up"> 
           {title}
         </MyTypography>
 

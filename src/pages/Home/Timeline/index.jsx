@@ -1,51 +1,82 @@
-import { faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faCalendarCheck } from '@fortawesome/free-regular-svg-icons';
+import {
+  faChartSimple,
+  faFlagCheckered,
+  faHandHoldingHeart,
+  faHandshakeAngle,
+  faListCheck,
+  faTruckFast,
+} from '@fortawesome/free-solid-svg-icons';
 import { Box, Container, Typography } from '@mui/material';
-import React from 'react';
-import TimelineItem from './TimelineItem';
-import styles from '../Home.module.scss';
 import classNames from 'classnames/bind';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import styles from '../Home.module.scss';
+import TimelineItem from './TimelineItem';
 const cx = classNames.bind(styles);
 
-const timelineData = [
-  {
-    title: 'Discover',
-    desc: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur labore expedita cumque, dolor reprehenderit nostrum natus. Id tempora laboriosam magnam quas quisquam molestias, reprehenderit voluptates ipsum laudantium doloribus nemo assumenda?',
-    icon: faMessage,
-    time: '07/01/2022',
-  },
-  {
-    title: 'Discover',
-    desc: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur labore expedita cumque, dolor reprehenderit nostrum natus. Id tempora laboriosam magnam quas quisquam molestias, reprehenderit voluptates ipsum laudantium doloribus nemo assumenda?',
-    icon: faMessage,
-    time: '07/01/2022',
-  },
-  {
-    title: 'Discover',
-    desc: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur labore expedita cumque, dolor reprehenderit nostrum natus. Id tempora laboriosam magnam quas quisquam molestias, reprehenderit voluptates ipsum laudantium doloribus nemo assumenda?',
-    icon: faMessage,
-    time: '07/01/2022',
-  },
-  {
-    title: 'Discover',
-    desc: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur labore expedita cumque, dolor reprehenderit nostrum natus. Id tempora laboriosam magnam quas quisquam molestias, reprehenderit voluptates ipsum laudantium doloribus nemo assumenda?',
-    icon: faMessage,
-    time: '07/01/2022',
-  },
-  {
-    title: 'Discover',
-    desc: ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur labore expedita cumque, dolor reprehenderit nostrum natus. Id tempora laboriosam magnam quas quisquam molestias, reprehenderit voluptates ipsum laudantium doloribus nemo assumenda?',
-    icon: faMessage,
-    time: '07/01/2022',
-  },
-];
+function Timeline({ id }) {
+  const { t } = useTranslation();
 
-function Timeline(props) {
+  const timelineData = [
+    {
+      title: t('content.timeline_item.title1'),
+      desc: t('content.timeline_item.desc1'),
+      icon: faFlagCheckered,
+      time: '2/12',
+    },
+    {
+      title: t('content.timeline_item.title2'),
+      desc: t('content.timeline_item.desc2'),
+      icon: faHandHoldingHeart,
+      time: '15/12',
+    },
+    {
+      title: t('content.timeline_item.title3'),
+      desc: t('content.timeline_item.desc3'),
+      icon: faHandshakeAngle,
+      time: '20/12',
+    },
+    {
+      title: t('content.timeline_item.title4'),
+      desc: t('content.timeline_item.desc4'),
+      icon: faListCheck,
+      time: '26/12',
+    },
+    {
+      title: t('content.timeline_item.title5'),
+      desc: t('content.timeline_item.desc5'),
+      icon: faChartSimple,
+      time: '03/01',
+    },
+    {
+      title: t('content.timeline_item.title6'),
+      desc: t('content.timeline_item.desc6'),
+      icon: faCalendarCheck,
+      time: '05/01',
+    },
+    {
+      title: t('content.timeline_item.title7'),
+      desc: t('content.timeline_item.desc7'),
+      icon: faTruckFast,
+      time: '07/01',
+    },
+  ];
+  // const Line = styled(Box)(({ theme }) => ({
+  //   flexGrow: 1,
+  // }));
+  // const Curvy = styled(Box)(({ theme }) => ({
+  //   height: 300,
+  //   flexGrow: 1,
+  // }));
+
   return (
     <Container
+      id={id}
       maxWidth="xl"
-      disableGutters={true}
+      // disableGutters={true}
       sx={{
-        padding: '50px 100px',
+        py: '150px',
       }}
     >
       <Typography
@@ -57,30 +88,83 @@ function Timeline(props) {
           display: 'block',
         }}
       >
-        {/* Timeline */}
+        Timeline
       </Typography>
-
-      {/* TIMELINEITEM */}
-      {timelineData.map((data, index) => (
-        <Box key={index}>
-          {index % 2 === 0 ? (
-            <TimelineItem
-              title={data.title}
-              desc={data.desc}
-              icon={data.icon}
-              time={data.time}
-            />
-          ) : (
-            <TimelineItem
-              title={data.title}
-              desc={data.desc}
-              icon={data.icon}
-              time={data.time}
-              classname={cx('timeline')}
-            />
-          )}
+      {/* <Box>
+        <Box sx={{ display: 'flex', maxWidth: '80%' }}>
+          <Line
+            sx={{
+              borderTop: '10px solid aqua',
+              borderTopRightRadius: 4,
+            }}
+          >
+            Ngang
+          </Line>
+          <Curvy
+            sx={{
+              borderBottom: '10px solid aqua',
+              borderTop: '10px solid aqua',
+              // borderRight: '10px solid aqua',
+              borderRadius: '0% 100% 100% 0% / 10% 50% 50% 10%',
+            }}
+          >
+            Cong phai
+          </Curvy>
         </Box>
-      ))}
+        <Box
+          sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}
+        >
+          <Box sx={{ display: 'flex', width: '80%', marginTop: '-14px' }}>
+            <Curvy
+              sx={{
+                borderBottom: '10px solid aqua',
+                borderTop: '10px solid aqua',
+                // borderRight: '10px solid aqua',
+                borderRadius: '100% 0% 0% 100% / 49% 10% 10% 50%',
+              }}
+            >
+              Cong trai
+            </Curvy>
+            <Line
+              sx={{
+                borderBottomLeftRadius: 4,
+
+                borderBottom: '10px solid aqua',
+              }}
+            >
+              Ngang
+            </Line>
+          </Box>
+        </Box>
+      </Box> */}
+      {/* TIMELINEITEM */}
+      <Box>
+        {timelineData.map((data, index) => (
+          <Box key={index}>
+            {index % 2 === 0 ? (
+              <TimelineItem
+                title={data.title}
+                desc={data.desc}
+                icon={data.icon}
+                time={data.time}
+                left="fade-up"
+                right="fade-up"
+              />
+            ) : (
+              <TimelineItem
+                separateRight
+                title={data.title}
+                desc={data.desc}
+                icon={data.icon}
+                time={data.time}
+                classname={cx('timeline')}
+                left="fade-up"
+                right="fade-up"
+              />
+            )}
+          </Box>
+        ))}
+      </Box>
     </Container>
   );
 }

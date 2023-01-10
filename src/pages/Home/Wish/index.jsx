@@ -8,7 +8,7 @@ import images from '../../../assets/images';
 
 const cx = classNames.bind(styles);
 
-function Wish(props) {
+function Wish({ id }) {
   const [name, setName] = React.useState('');
   const handleChange = (event) => {
     setName(event.target.value);
@@ -16,17 +16,18 @@ function Wish(props) {
 
   return (
     <Container
+      id={id}
       maxWidth="xl"
-      disableGutters={true}
+      // disableGutters={true}
       sx={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        padding: '100px 100px',
+        padding: '100px 0',
         gap: 5,
       }}
     >
       {/* LEFT */}
-      <Box>
+      <Box data-aos="fade-up">
         <Typography variant="p">CALL TO ACTION</Typography>
         <Typography variant="h3" component="h4" sx={{ py: 4 }}>
           Lets Create Something Great Together!
@@ -67,6 +68,7 @@ function Wish(props) {
           alignItems: 'center',
           position: 'relative',
         }}
+        data-aos="fade-up"
       >
         <Image
           src={images.about}
@@ -89,6 +91,8 @@ function Wish(props) {
   );
 }
 
-Wish.propTypes = {};
+Wish.propTypes = {
+  id: PropTypes.string,
+};
 
 export default Wish;

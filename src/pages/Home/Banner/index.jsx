@@ -122,7 +122,6 @@ function Banner() {
           component="span"
           className={cx('banner-title')}
           data-aos="fade-up"
-          data-aos-delay="500"
         >
           lên bản
         </Typography>

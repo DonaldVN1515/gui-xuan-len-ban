@@ -30,7 +30,7 @@ function About({ id }) {
           xs: 'repeat(1, 1fr)',
           lg: 'repeat(2, 1fr)',
         },
-        pt: { sm: 10, xs: 5 },
+        pt: { md: 15, sm: 10, xs: 5 },
         gap: { xs: 3, lg: 0 },
       }}
     >
@@ -46,7 +46,7 @@ function About({ id }) {
           sx={{
             py: 3,
             fontFamily: 'Dancing Script',
-            height:'209px',
+            height: '209px',
             fontSize: { xs: '45px', md: '70px' },
             color: 'var(--primary)',
           }}
@@ -65,6 +65,8 @@ function About({ id }) {
             textAlign: 'justify',
             lineHeight: 2,
           }}
+          data-aos="fade-up"
+          data-aos-delay="500"
         >
           {t('content.about_us_desc')}
         </Typography>
@@ -73,6 +75,8 @@ function About({ id }) {
           href="https://drive.google.com/file/d/1OvoGCjVcGkObRgL99ikz_DiH4_U69Ofc/view?fbclid=IwAR0jvhDGkIEK2RshhfM42ld-eog4H-YgfHkl5V3ogIMfkcXgmDUVnncY9dw"
           target="_blank"
           rel="noreferrer"
+          data-aos="fade-up"
+          data-aos-delay="500"
         >
           <button className={cx('learn-more')}>
             <span className={cx('circle')} aria-hidden="true">
@@ -97,7 +101,13 @@ function About({ id }) {
           position: 'relative',
         }}
       >
-        <Image src={images.brush} alt="" className={cx('about__brush')} />
+        <Image
+          src={images.brush}
+          alt=""
+          className={cx('about__brush')}
+          data-aos="fade-up"
+          data-aos-delay="300"
+        />
         <Image src={images.about} alt="" className={cx('about__image')} />
 
         {/* QUOTES */}
@@ -109,9 +119,15 @@ function About({ id }) {
             left: { xs: '30%', sm: '50%', lg: '139px' },
             bottom: { xs: '-30px', lg: '23px' },
           }}
+          data-aos="fade-up"
+          data-aos-delay="300"
         >
-          <Typography variant="h6"></Typography>
-          <Typography variant="p" className={cx('quotes')}>
+          <Typography
+            variant="p"
+            className={cx('quotes')}
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
             {t('content.about_us_quote')}
 
             <i className="fa-solid fa-quote-right"></i>

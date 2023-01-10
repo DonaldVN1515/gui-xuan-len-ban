@@ -19,18 +19,20 @@ function DefaultLayout({ children }) {
   const pages = [
     t('content.home'),
     t('content.about_us'),
-    t('content.timeline'),
+    t('content.places'),
     t('content.donation'),
+    t('content.timeline'),
     t('content.sponsors'),
-    t('content.wishes'),
   ];
   const context = React.useContext(ThemeContext);
   let hrefPage = `${convertUrl(t('content.home'))}`;
   return (
-    <Box className={cx(context.theme, 'wrapper')} id={hrefPage}>
+    <Box className={cx(context.theme, 'wrapper')}>
       <Header pages={pages} />
 
-      <Box sx={{ pt: '100px' }}>{children}</Box>
+      <Box sx={{ pt: '100px' }} id={hrefPage}>
+        {children}
+      </Box>
 
       <Footer pages={pages} />
     </Box>

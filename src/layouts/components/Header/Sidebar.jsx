@@ -24,7 +24,6 @@ export default function SideBar({ open, onClose, pages, hash }) {
     fontSize: 20,
     color: 'inherit',
   }));
-  console.log('[open]', open);
   return (
     <Drawer open={open} anchor="left" onClose={onClose}>
       <Box

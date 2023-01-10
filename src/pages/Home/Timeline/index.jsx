@@ -55,53 +55,51 @@ function Timeline({ id }) {
   // }));
 
   return (
-    <Container
-      id={id}
-      maxWidth="xl"
-      // disableGutters={true}
-      sx={{
-        mt: 10,
-        py: '150px',
-      }}
-    >
-      <Typography
-        variant="span"
+    <Container id={id} maxWidth="xl">
+      <Box
         sx={{
-          display: 'content',
-          fontFamily: 'Dancing Script',
-          height: '209px',
-          fontSize: { xs: '45px', md: '70px' },
-          color: 'var(--primary)',
+          padding: { md: '100px 0 50px 0', xs: '50px 0 50px 0' },
         }}
       >
-        Timeline
-      </Typography>
-
-      {/* TIMELINEITEM */}
-      <Box sx={{ mt: 10 }}>
-        {timelineData.map((data, index) => (
-          <Box key={index}>
-            {index % 2 === 0 ? (
-              <TimelineItem
-                title={data.title}
-                desc={data.desc}
-                time={data.time}
-                left="fade-up"
-                right="fade-up"
-              />
-            ) : (
-              <TimelineItem
-                separateRight
-                title={data.title}
-                desc={data.desc}
-                time={data.time}
-                classname={cx('timeline')}
-                left="fade-up"
-                right="fade-up"
-              />
-            )}
-          </Box>
-        ))}
+        <Typography
+          variant="span"
+          sx={{
+            display: 'content',
+            fontFamily: 'Dancing Script',
+            height: '209px',
+            fontSize: { xs: '45px', md: '70px' },
+            color: 'var(--primary)',
+          }}
+          data-aos="fade-up"
+        >
+          Timeline
+        </Typography>
+        {/* TIMELINEITEM */}
+        <Box sx={{ mt: 5 }}>
+          {timelineData.map((data, index) => (
+            <Box key={index}>
+              {index % 2 === 0 ? (
+                <TimelineItem
+                  title={data.title}
+                  desc={data.desc}
+                  time={data.time}
+                  left="fade-up"
+                  right="fade-up"
+                />
+              ) : (
+                <TimelineItem
+                  separateRight
+                  title={data.title}
+                  desc={data.desc}
+                  time={data.time}
+                  classname={cx('timeline')}
+                  left="fade-up"
+                  right="fade-up"
+                />
+              )}
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Container>
   );

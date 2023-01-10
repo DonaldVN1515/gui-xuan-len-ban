@@ -15,6 +15,18 @@ const images = {
   // slides
   flower: require('./slides/hoa.png'),
 
+  // PLACES
+  aDinh: require('./places/a-dinh.jpg'),
+  canDon: require('./places/can-don1.jpg'),
+  laBo: require('./places/la-bo.jpg'),
+  spring: require('./places/spring.jpg'),
+  abat: require('./places/abat.jpg'),
+  commingSoon: require('./places/comming-soon.jpg'),
+
+  // DONATE
+  donate: require('./donate.jpg'),
+  donate1: require('./donate1.jpg'),
+
   // SVG
   icon: require('./svg/icon.svg'),
   icon1: require('./svg/icon1.svg').default,

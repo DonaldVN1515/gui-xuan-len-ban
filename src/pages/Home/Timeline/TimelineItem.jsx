@@ -4,16 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from '../Home.module.scss';
 const cx = classNames.bind(styles);
-function TimelineItem({
-  title,
-  desc,
-  icon,
-  time,
-  classname,
-  separateRight,
-  left,
-  right,
-}) {
+function TimelineItem({ title, desc, time, classname, separateRight, left }) {
   const MyBox = styled(Box)(({ theme }) => ({
     position: 'relative',
     display: 'grid',
@@ -37,7 +28,8 @@ function TimelineItem({
     [theme.breakpoints.down('md')]: {
       gridTemplateColumns: 'repeat(1, 1fr)',
       padding: '0px 0 0 80px',
-
+      gap: 10,
+      // margin: '20px 0',
       '&::after': {
         content: '""',
         width: '5px',
@@ -64,16 +56,13 @@ function TimelineItem({
       padding: 12,
       backgroundColor: 'white',
       position: 'absolute',
-      top: '30%',
+      top: '50%',
       left: 0,
       transform: 'translateY(-50%)',
       zIndex: 1,
     },
   }));
 
-  const Title = styled(Typography)(({ theme }) => ({
-    position: 'relative',
-  }));
   const classes = cx({
     [classname]: classname,
     separateRight,
@@ -87,21 +76,25 @@ function TimelineItem({
           background: 'var(--primary)',
           color: 'white',
           p: 3,
-          width: '80%',
+          width: { sm: '80%', xs: '100%' },
           // borderBottom: '3px dotted #000',
         }}
         data-aos={left}
       >
-        <Title variant="h6" component="h6" className={cx('right')}>
+        <Typography
+          variant="h6"
+          className={cx('right')}
+          sx={{ position: 'relative', fontSize: { sm: '20px', xs: '15px' } }}
+        >
           {title}
-        </Title>
+        </Typography>
         <Typography
           variant="p"
           sx={{
             textAlign: 'justify',
             pt: 3,
-            display: 'block',
             maxWidth: '80%',
+            display: { sm: 'block', xs: 'none' },
           }}
         >
           {desc}

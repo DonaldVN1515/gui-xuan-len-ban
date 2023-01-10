@@ -46,6 +46,9 @@
   .timeline {
     direction: unset;
   }
+  .right::after {
+    display: none;
+  }
   .separateRight .right::after {
     left: 0;
     right: unset;
@@ -187,10 +190,12 @@ button {
 // DONATE
 .donate__image {
   width: 400px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  // border: 6px solid var(--primary);
 }
 .image__item {
   width: 300px;
-  border: 8px solid white;
+  // border: 6px solid var(--primary);
 }
 
 @media screen and (max-width: 900px) {
@@ -229,4 +234,25 @@ button {
   overflow: hidden;
 }
 
-//Address
+//PLACES
+.place {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.place:hover .place__image {
+  filter: unset;
+  transform: scale(1.1);
+}
+.place:hover .place__title {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+}
+.place__image {
+  filter: grayscale(100%);
+  transition: all 0.25s linear;
+}
+.place__title {
+  transition: all 0.2s linear;
+}

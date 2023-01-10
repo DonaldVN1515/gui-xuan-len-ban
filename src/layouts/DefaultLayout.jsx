@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Footer from './components/Footer';
+import Footer from '../layouts/components/Footer';
 import Header from './components/Header';
 import style from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';

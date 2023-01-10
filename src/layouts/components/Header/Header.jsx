@@ -23,7 +23,7 @@ import Image from '../../../components/Image';
 // USING FOR SCSS MODULE
 import classNames from 'classnames/bind';
 import { useLocation } from 'react-router-dom';
-import Darkmode from './Darkmode';
+// import Darkmode from './Darkmode';
 import styles from './Header.module.scss';
 import Nav from './Nav';
 import SideBar from './Sidebar';

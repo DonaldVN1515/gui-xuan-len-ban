@@ -33,28 +33,35 @@ const organizationData = [
   {
     title: '',
     imageUrl: images.btecLogo,
+    pageLink: 'https://www.facebook.com/btecfptdn',
   },
   {
     title: '',
     imageUrl: images.chuaLogo,
+    pageLink: 'https://www.facebook.com/ThichChucDat',
   },
 ];
 const contributorData = [
   {
-    title: '',
-    imageUrl: images.katkunstLogo1,
-  },
-  {
     title: 'bitc',
     imageUrl: images.bitcLogo,
+    pageLink: 'https://www.facebook.com/bitc.club',
+  },
+
+  {
+    title: '',
+    imageUrl: images.bclubLogo,
+    pageLink: 'https://www.facebook.com/clbbcub',
   },
   {
     title: '',
     imageUrl: images.dragonLogo1,
+    pageLink: 'https://www.facebook.com/profile.php?id=100063955156890',
   },
   {
     title: '',
-    imageUrl: images.bclubLogo,
+    imageUrl: images.katkunstLogo1,
+    pageLink: 'https://www.facebook.com/KatKunstbtec',
   },
 ];
 

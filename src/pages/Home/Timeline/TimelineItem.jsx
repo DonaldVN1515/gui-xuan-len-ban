@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Paper, styled, Typography } from '@mui/material';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
@@ -21,7 +20,7 @@ function TimelineItem({
 
     [theme.breakpoints.up('md')]: {
       gridTemplateColumns: 'repeat(2, 1fr)',
-      padding: '0px 0 50px 0',
+      padding: '0px 0 100px 0',
 
       '&::after': {
         content: '""',
@@ -31,7 +30,7 @@ function TimelineItem({
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        borderRight: '3px dashed #000',
+        borderRight: '3px solid var(--primary)',
       },
     },
 
@@ -45,9 +44,9 @@ function TimelineItem({
         height: '100%',
         position: 'absolute',
         top: '50%',
-        left: "25px",
+        left: '25px',
         transform: 'translateY(-50%)',
-        borderRight: '3px dashed #000',
+        borderRight: '3px solid var(--primary)',
       },
     },
   }));
@@ -85,13 +84,15 @@ function TimelineItem({
       {/* Left */}
       <Box
         sx={{
-          pt: 3,
-          pb: 5,
-          borderBottom: '3px dotted #000',
+          background: 'var(--primary)',
+          color: 'white',
+          p: 3,
+          width: '80%',
+          // borderBottom: '3px dotted #000',
         }}
         data-aos={left}
       >
-        <Title variant="h5" component="h6" className={cx('right')}>
+        <Title variant="h6" component="h6" className={cx('right')}>
           {title}
         </Title>
         <Typography
@@ -107,18 +108,7 @@ function TimelineItem({
         </Typography>
       </Box>
       {/* Right */}
-      <Box
-        sx={{
-          pt: 3,
-          pb: 5,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-        data-aos={right}
-      >
-        <FontAwesomeIcon icon={icon} className={cx('timeline__icon')} />
-      </Box>
+      <Box></Box>
 
       {/* Line middle */}
       <Timer>{time}</Timer>
@@ -128,7 +118,6 @@ function TimelineItem({
 
 TimelineItem.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.object.isRequired,
   time: PropTypes.string.isRequired,
   desc: PropTypes.string,
 };

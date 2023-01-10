@@ -3,14 +3,14 @@ import React from 'react';
 import images from '../../assets/images';
 import About from './About';
 import Banner from './Banner';
-import Donor from './Donor';
 import Donate from './Donate';
+import Donor from './Donor';
 // import PropTypes from 'prop-types';
-import Timeline from './Timeline';
 import { convertUrl } from '../../hooks/convertUrl';
+import Timeline from './Timeline';
 
-import { useTranslation } from 'react-i18next';
 import classNames from 'classnames/bind';
+import { useTranslation } from 'react-i18next';
 import styles from './Home.module.scss';
 // import Wish from './Wish';
 const cx = classNames.bind(styles);

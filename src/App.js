@@ -10,9 +10,10 @@ import 'aos/dist/aos.css';
 import { useState, useEffect } from 'react';
 import SyncLoader from 'react-spinners/SyncLoader';
 const override = {
-  display: 'block',
-  textAlign: 'center',
-  transform: 'translate(0, 500%)',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
 };
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
       duration: 2000,
       delay: 200,
       // once: true,
-      once: false
+      once: false,
     });
   }, []);
   return (

@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
 }
-.donor{
+.donor {
   margin: 100px 0;
 }
 
@@ -24,18 +24,21 @@
 }
 
 .right::after {
-  left: 0;
-  bottom: -8px;
+  right: -124px;
+  bottom: -88px;
   position: absolute;
   content: '';
   width: 100px;
   height: 5px;
   border-radius: 5px;
-  background: linear-gradient(-135deg, #d32f2fd6, orange);
+  // background: linear-gradient(-135deg, #d32f2fd6, orange);
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 60px solid var(--primary);
 }
 .separateRight .right::after {
-  left: unset;
-  right: 0;
+  transform: rotate(180deg);
+  right: 571px;
 }
 
 @media screen and (max-width: 900px) {
@@ -200,7 +203,6 @@ button {
 
 // WISH
 .wish__image {
-  
   width: 200px;
   height: 100%;
   filter: grayscale(100%);

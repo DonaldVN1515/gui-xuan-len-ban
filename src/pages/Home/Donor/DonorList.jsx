@@ -34,7 +34,6 @@ export default function DonorList({ data }) {
               alt={item.title}
               className={cx('image')}
               data-aos="fade-up"
-              data-delay="500"
             />
             {/* <Typography
             variant="h6"

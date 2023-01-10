@@ -21,7 +21,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 1500);
 
     // chỗ chỉnh aos :V
     Aos.init({

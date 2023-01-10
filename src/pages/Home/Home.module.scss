@@ -9,6 +9,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.donor{
+  margin: 100px 0;
 }
 
 // TIMELINE
@@ -81,6 +85,7 @@
   left: 3%;
   transform: rotate(18deg);
 }
+
 .quotes {
   font-family: 'Dancing Script', cursive;
   font-size: 16px;
@@ -196,6 +201,7 @@ button {
 
 // WISH
 .wish__image {
+  
   width: 200px;
   height: 100%;
   filter: grayscale(100%);
@@ -220,3 +226,5 @@ button {
   height: 100%;
   overflow: hidden;
 }
+
+//Address

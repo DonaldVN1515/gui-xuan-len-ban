@@ -187,7 +187,7 @@ function Header({ pages }) {
               </Typography> */}
               {/* DARKMODE */}
               {/* <Button onClick={context.toggleTheme}>Dark Mode</Button> */}
-              <Darkmode />
+              {/* <Darkmode /> */}
               {/* LANGUAGE TRANSLATION */}
               {/* <Button type='submit' onClick={changeLang}>Tiếng việt</Button> */}
               <LanguageMenu onClick={changeLang} />

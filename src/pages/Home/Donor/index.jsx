@@ -10,7 +10,7 @@ function Donor({ title, data }) {
     position: 'relative',
     fontWeight: 'bold',
     padding: '10px 0',
-    marginBottom:'20px',
+  
     // '&::after': {
     //   content: '""',
     //   position: 'absolute',

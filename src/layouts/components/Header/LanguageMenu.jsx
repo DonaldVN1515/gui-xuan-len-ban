@@ -23,19 +23,16 @@ export default function Language({ onClick }) {
 
   return (
     <div>
-      <IconButton
-        sx={{
-          cursor: 'pointer',
-          m: { md: 0.5, lg: 2 },
-        }}
+      <Button
         id="fade-button"
         aria-controls={open ? 'fade-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        sx={{cursor:'pointer', color:'#3c3b3b'}}
       >
-        <FontAwesomeIcon icon={faEarthAsia} className={cx('language__icon')} />
-      </IconButton>
+        Language
+      </Button>
       <Menu
         sx={{
           mt: 2,

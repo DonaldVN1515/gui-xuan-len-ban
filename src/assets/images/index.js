@@ -2,7 +2,10 @@ const images = {
   noImage: require('./logos/no-image.png'),
   bitcLogo: require('./logos/logo-bitc.png'),
   btecLogo: require('./logos/logo-btec.png'),
-
+  dragonLogo: require('./logos/logo-dragon.png'),
+  bclubLogo: require('./logos/logo-bclub.png'),
+  katkunstLogo: require('./logos/logo-katkunst.png'),
+  chuaLogo: require('./logos/logo-chua.png'),
   // About
   about: require('./about/about.jpg'),
   brush: require('./about/brush.png'),

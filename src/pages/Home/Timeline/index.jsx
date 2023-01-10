@@ -77,6 +77,7 @@ function Timeline({ id }) {
       // disableGutters={true}
       sx={{
         py: '150px',
+        display:'none'
       }}
     >
       <Typography

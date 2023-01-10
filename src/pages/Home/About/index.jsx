@@ -46,6 +46,7 @@ function About({ id }) {
           sx={{
             py: 3,
             fontFamily: 'Dancing Script',
+            height:'209px',
             fontSize: { xs: '45px', md: '70px' },
             color: 'var(--primary)',
           }}
@@ -106,7 +107,7 @@ function About({ id }) {
             p: 3,
             maxWidth: '300px',
             left: { xs: '30%', sm: '50%', lg: '139px' },
-            bottom: { xs: '-40px', lg: '50px' },
+            bottom: { xs: '-30px', lg: '23px' },
           }}
         >
           <Typography variant="h6"></Typography>
